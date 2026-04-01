@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import AnimatedHeartLogo from './components/AnimatedHeartLogo';
 import { getHolidayTheme } from './utils/holidayTheme';
+import { SocialProofToast } from './components/SocialProofToast';
 import {
   Users,
   Target,
@@ -180,16 +181,16 @@ function App() {
             </h2>
             
             <p className="text-xl md:text-2xl text-gray-700 mb-4 max-w-4xl mx-auto font-medium">
-              Members of <span className={`${theme.accentColor} font-bold`}>The Internet Health Site</span> now enjoy 
-              <span className={`${theme.accentColor} font-bold`}> complementary membership</span> in the 
-              <span className={`${theme.accentColor} font-bold`}> Internet Health Club</span> — which delivers 
-              step-by-step remote guidance into the path of designing your figure.
+              If you're part of <span className={`${theme.accentColor} font-bold`}>The Internet Health Site</span>, great news — 
+              you already have <span className={`${theme.accentColor} font-bold`}>free access</span> to the 
+              <span className={`${theme.accentColor} font-bold`}> Internet Health Club</span>. We'll walk you through 
+              every step of getting in shape, right from your phone or computer.
             </p>
 
             <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-              No more struggling alone. No more confusing advice. Just <span className={`${theme.accentColor} font-bold`}>real results</span> with 
-              <span className={`${theme.accentColor} font-bold`}> real people</span> who actually care about your success — 
-              and a proven remote coaching system that designs your body from anywhere.
+              No gym needed. No confusing plans. Just a <span className={`${theme.accentColor} font-bold`}>real coach</span>, 
+              a <span className={`${theme.accentColor} font-bold`}>real plan</span>, and 
+              <span className={`${theme.accentColor} font-bold`}> real people</span> cheering you on every day.
             </p>
             
             <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 mb-8 max-w-3xl mx-auto shadow-lg border border-gray-200">
@@ -204,10 +205,10 @@ function App() {
                 <span className="ml-4 text-sm text-gray-600">Growing community of transformers</span>
               </div>
               <p className="text-lg text-gray-800 italic font-medium">
-                "I was tired of being the person who 'starts tomorrow.' The Internet Health Club gave me a real coach,
-                a real plan, and real accountability. Down 34 pounds and feeling incredible — all from home!"
+                "I kept saying I'd start Monday. Then I found this group and everything changed. 
+                My coach made it so simple. I lost 34 pounds and I did it all from my living room!"
               </p>
-              <p className="text-sm text-gray-600 mt-2">- Sarah M., transformed in 90 days with remote coaching</p>
+              <p className="text-sm text-gray-600 mt-2">- Sarah M., lost 34 lbs in 90 days from home</p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
@@ -227,23 +228,23 @@ function App() {
             {/* Internet Health Club Value Prop */}
             <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 max-w-md mx-auto shadow-2xl border-2 border-gray-200">
               <div className="text-center">
-                <span className="text-base font-bold text-gray-800">Your Internet Health Club Membership Includes:</span>
+                <span className="text-base font-bold text-gray-800">What You Get (Free with Your Membership):</span>
                 <div className="mt-3 space-y-2 text-sm font-semibold">
                   <div className="flex items-center justify-center space-x-2">
                     <span>💪</span>
-                    <span>Step-by-step remote figure design guidance</span>
+                    <span>Easy workouts you can do at home</span>
                   </div>
                   <div className="flex items-center justify-center space-x-2">
                     <span>🎯</span>
-                    <span>Personal coach assigned to your journey</span>
+                    <span>Your own coach who checks in on you</span>
                   </div>
                   <div className="flex items-center justify-center space-x-2">
                     <span>🔥</span>
-                    <span>Custom workout & nutrition plans from home</span>
+                    <span>Simple meal ideas that don't feel like a diet</span>
                   </div>
                   <div className="flex items-center justify-center space-x-2">
                     <span>🤝</span>
-                    <span>24/7 community support & accountability</span>
+                    <span>A friendly group that keeps you going</span>
                   </div>
                 </div>
               </div>
@@ -267,7 +268,7 @@ function App() {
             </div>
             <div className="bg-white border-4 border-black rounded-xl px-6 py-3 inline-block transform rotate-1 shadow-[4px_4px_0px_0px_#000]">
               <p className="text-xl font-bold text-black">
-                The Internet Health Club designs YOUR figure remotely — pick your path! 💥
+                Pick a goal and we'll show you exactly how to get there — from home! 💥
               </p>
             </div>
           </div>
@@ -275,32 +276,32 @@ function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <ComicGoal
               icon={Target}
-              title="Weight Loss"
-              description="Your remote coach designs a fat-burning plan tailored to YOUR body — no guesswork!"
+              title="Lose Weight"
+              description="We build a simple plan around YOUR life. Eat food you like. Move at your pace. Watch the pounds drop."
               color="bg-red-500"
               bgColor="bg-red-200"
               index={0}
             />
             <ComicGoal
               icon={Heart}
-              title="Injury Recovery"
-              description="Step-by-step remote rehab guidance to bounce back stronger than ever!"
+              title="Heal & Recover"
+              description="Coming back from an injury? We'll guide you through every step so you feel strong again."
               color="bg-blue-500"
               bgColor="bg-blue-200"
               index={1}
             />
             <ComicGoal
               icon={Dumbbell}
-              title="Strength Building"
-              description="Build lean muscle from anywhere with expert-designed remote training programs!"
+              title="Get Stronger"
+              description="Build muscle at home with simple exercises. No fancy equipment needed — just you and a plan."
               color="bg-green-500"
               bgColor="bg-green-200"
               index={2}
             />
             <ComicGoal
               icon={Activity}
-              title="Mobility Freedom"
-              description="Remote flexibility coaching that unlocks your body's full range of motion!"
+              title="Move Better"
+              description="Feel stiff or achy? We'll help you move freely again so everyday stuff feels easy."
               color="bg-purple-500"
               bgColor="bg-purple-200"
               index={3}
@@ -361,10 +362,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Real Results from Real Members — All Achieved Remotely
+              Our Members Are Getting Real Results
             </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Internet Health Club members don't just dream about change — they achieve it with step-by-step remote guidance that designs their figure from anywhere in the world.
+              These aren't just numbers — they're people like you who decided to start. Here's how they're doing.
             </p>
           </div>
           
@@ -377,9 +378,9 @@ function App() {
               <div className="relative mb-4">
                 <Target className="h-12 w-12 text-red-600 mx-auto" />
               </div>
-              <h4 className="text-xl font-semibold mb-3">Remote Weight Loss</h4>
+              <h4 className="text-xl font-semibold mb-3">Weight Loss</h4>
               <p className="text-gray-600 mb-4">
-                Your personal coach designs a sustainable fat-loss plan you follow from home. No gym required.
+                Your coach builds a plan you can actually stick to. No crazy diets — just simple changes that work.
               </p>
               <ProgressBar progress={progressBars.weightLoss} label="Success Rate" color="bg-red-500" />
               <div className="text-sm text-red-600 font-semibold">🔥 89% achieve their goal weight</div>
@@ -393,9 +394,9 @@ function App() {
               <div className="relative mb-4">
                 <Heart className="h-12 w-12 text-blue-600 mx-auto" />
               </div>
-              <h4 className="text-xl font-semibold mb-3">Remote Recovery</h4>
+              <h4 className="text-xl font-semibold mb-3">Recovery</h4>
               <p className="text-gray-600 mb-4">
-                Step-by-step guided rehab delivered remotely. Come back stronger without leaving your home.
+                Hurt your back? Bad knee? Your coach walks you through getting better, one day at a time.
               </p>
               <ProgressBar progress={progressBars.recovery} label="Recovery Rate" color="bg-blue-500" />
               <div className="text-sm text-blue-600 font-semibold">💪 94% full recovery rate</div>
@@ -409,9 +410,9 @@ function App() {
               <div className="relative mb-4">
                 <Shield className="h-12 w-12 text-green-600 mx-auto" />
               </div>
-              <h4 className="text-xl font-semibold mb-3">Remote Mobility</h4>
+              <h4 className="text-xl font-semibold mb-3">Flexibility</h4>
               <p className="text-gray-600 mb-4">
-                Remote coaching that unlocks pain-free movement. Feel 20 years younger from your living room.
+                Stretch, move, and feel good again. Members say they feel 20 years younger in just weeks.
               </p>
               <ProgressBar progress={progressBars.mobility} label="Improvement Rate" color="bg-green-500" />
               <div className="text-sm text-green-600 font-semibold">🧘‍♀️ 87% pain reduction</div>
@@ -425,9 +426,9 @@ function App() {
               <div className="relative mb-4">
                 <Users className="h-12 w-12 text-purple-600 mx-auto" />
               </div>
-              <h4 className="text-xl font-semibold mb-3">Club Community</h4>
+              <h4 className="text-xl font-semibold mb-3">Community</h4>
               <p className="text-gray-600 mb-4">
-                24/7 support from fellow members and coaches who celebrate every small win with you.
+                You're never alone. Post a win, ask a question, or just vent — someone's always there.
               </p>
               <ProgressBar progress={progressBars.community} label="Satisfaction Rate" color="bg-purple-500" />
               <div className="text-sm text-purple-600 font-semibold">❤️ 96% member satisfaction</div>
@@ -450,10 +451,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Internet Health Club Success Stories
+              People Just Like You Are Doing It
             </h3>
             <p className="text-xl text-gray-600">
-              Real transformations from real members — all achieved remotely with their personal figure-design coach
+              These are regular people — moms, dads, grandparents, busy workers — who finally found something that works
             </p>
           </div>
           
@@ -474,7 +475,7 @@ function App() {
                 </div>
               </div>
               <p className="text-gray-700 mb-4 italic">
-                "I never believed remote coaching could work until I joined the Internet Health Club. My coach designed every workout and meal plan specifically for me. Down 45 lbs without ever stepping into a gym. This community changed my life!"
+                "I never thought I could lose weight without going to a gym. My coach made it so easy — told me exactly what to eat and what exercises to do at home. 45 pounds gone and I feel amazing!"
               </p>
               <div className="flex items-center">
                 <div className={`w-12 h-12 bg-gradient-to-r ${theme.gradient} rounded-full flex items-center justify-center text-white font-bold text-lg`}>S</div>
@@ -505,7 +506,7 @@ function App() {
                 </div>
               </div>
               <p className="text-gray-700 mb-4 italic">
-                "After my knee surgery, I thought my active days were over. The remote recovery program gave me step-by-step guidance from home. Now I'm hiking mountains I never thought I'd see — and my coach celebrated every single step!"
+                "After knee surgery I thought I was done. My coach gave me simple exercises to do at home and checked on me every day. Now I'm hiking again! I honestly can't believe it."
               </p>
               <div className="flex items-center">
                 <div className={`w-12 h-12 bg-gradient-to-r ${theme.gradient} rounded-full flex items-center justify-center text-white font-bold text-lg`}>M</div>
@@ -536,7 +537,7 @@ function App() {
                 </div>
               </div>
               <p className="text-gray-700 mb-4 italic">
-                "At 62, I'm in the best shape of my life — all from following my remote coach's plan at home. I can keep up with my grandkids, garden without pain, and feel 20 years younger. The Internet Health Club believes in you!"
+                "I'm 62 and in the best shape of my life. I do everything from home. I can keep up with my grandkids now and my back doesn't hurt anymore. Wish I'd found this years ago."
               </p>
               <div className="flex items-center">
                 <div className={`w-12 h-12 bg-gradient-to-r ${theme.gradient} rounded-full flex items-center justify-center text-white font-bold text-lg`}>L</div>
@@ -570,10 +571,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Your Internet Health Club Membership — Everything Included
+              Everything You Need — All Included Free
             </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Complementary with your Internet Health Site membership. Step-by-step remote guidance to design the figure you've always wanted.
+              Your Health Club membership comes with everything. A coach, a plan, a community, and simple tools to track your progress.
             </p>
           </div>
           
@@ -585,9 +586,9 @@ function App() {
                     <CheckCircle className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg mb-2 group-hover:text-red-600 transition-colors">Personal Figure Design Coach</h4>
-                    <p className="text-gray-600">A dedicated remote coach who creates YOUR custom plan — workouts, nutrition, and accountability. Not a cookie-cutter program.</p>
-                    <div className="mt-2 text-sm text-red-600 font-medium">✨ 1-on-1 remote coaching included</div>
+                    <h4 className="font-semibold text-lg mb-2 group-hover:text-red-600 transition-colors">Your Own Personal Coach</h4>
+                    <p className="text-gray-600">A real person who builds your plan, checks in on you, and answers your questions. It's like having a friend who's also a trainer.</p>
+                    <div className="mt-2 text-sm text-red-600 font-medium">✨ Your coach is a real person, not a bot</div>
                   </div>
                 </div>
                 
@@ -596,9 +597,9 @@ function App() {
                     <CheckCircle className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg mb-2 group-hover:text-blue-600 transition-colors">Step-by-Step Remote Guidance</h4>
-                    <p className="text-gray-600">Follow-along video workouts, daily check-ins, and meal plans delivered straight to your phone. Transform from anywhere.</p>
-                    <div className="mt-2 text-sm text-blue-600 font-medium">📱 All from your phone or laptop</div>
+                    <h4 className="font-semibold text-lg mb-2 group-hover:text-blue-600 transition-colors">Simple Plans on Your Phone</h4>
+                    <p className="text-gray-600">Easy videos to follow along with, simple meal ideas, and daily check-ins — all right on your phone.</p>
+                    <div className="mt-2 text-sm text-blue-600 font-medium">📱 Works on any phone or computer</div>
                   </div>
                 </div>
                 
@@ -607,9 +608,9 @@ function App() {
                     <CheckCircle className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg mb-2 group-hover:text-green-600 transition-colors">24/7 Health Club Community</h4>
-                    <p className="text-gray-600">Never feel alone. Connect with fellow members and certified coaches anytime you need motivation, answers, or a high-five.</p>
-                    <div className="mt-2 text-sm text-green-600 font-medium">💬 Always someone here to help</div>
+                    <h4 className="font-semibold text-lg mb-2 group-hover:text-green-600 transition-colors">A Group That Actually Cares</h4>
+                    <p className="text-gray-600">Post your wins, ask questions, or just say hi. Everyone here is on the same journey and they've got your back.</p>
+                    <div className="mt-2 text-sm text-green-600 font-medium">💬 Someone's always around to help</div>
                   </div>
                 </div>
                 
@@ -618,9 +619,9 @@ function App() {
                     <CheckCircle className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg mb-2 group-hover:text-purple-600 transition-colors">Gamified Progress Tracking</h4>
-                    <p className="text-gray-600">Earn badges, unlock achievements, and celebrate milestones. Your coach tracks everything so you see exactly how far you've come.</p>
-                    <div className="mt-2 text-sm text-purple-600 font-medium">🏆 Level up your fitness game</div>
+                    <h4 className="font-semibold text-lg mb-2 group-hover:text-purple-600 transition-colors">See How Far You've Come</h4>
+                    <p className="text-gray-600">Track your wins, earn badges, and watch your progress add up. It feels good to see it all laid out.</p>
+                    <div className="mt-2 text-sm text-purple-600 font-medium">🏆 Every small win counts</div>
                   </div>
                 </div>
                 
@@ -629,9 +630,9 @@ function App() {
                     <CheckCircle className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg mb-2 group-hover:text-yellow-600 transition-colors">Weekly Live Coaching Sessions</h4>
-                    <p className="text-gray-600">Interactive workshops, Q&As, and group challenges led by fitness experts who actually care about your success.</p>
-                    <div className="mt-2 text-sm text-yellow-600 font-medium">📅 Live sessions every week</div>
+                    <h4 className="font-semibold text-lg mb-2 group-hover:text-yellow-600 transition-colors">Live Group Sessions Every Week</h4>
+                    <p className="text-gray-600">Hop on a live call, ask anything, and work out with the group. It's fun and it keeps you showing up.</p>
+                    <div className="mt-2 text-sm text-yellow-600 font-medium">📅 New sessions every week</div>
                   </div>
                 </div>
               </div>
@@ -652,18 +653,18 @@ function App() {
                     <span className="font-black">{theme.name.toUpperCase()} FLASH ENROLLMENT</span>
                     <Sparkles className="h-5 w-5 ml-2" />
                   </div>
-                  <h4 className="text-2xl font-bold mb-2">Complementary Health Club Membership!</h4>
-                  <p className="text-yellow-100 font-bold">Limited spots — Offer expires in {formatTime(timeLeft)}</p>
+                  <h4 className="text-2xl font-bold mb-2">Free Health Club Membership!</h4>
+                  <p className="text-yellow-100 font-bold">Spots are limited — Offer ends in {formatTime(timeLeft)}</p>
                 </div>
                 
                 <div className="space-y-4 mb-6">
                   <div className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-2 flex-shrink-0" />
-                    <span>Personal Remote Figure Design Coach</span>
+                    <span>Your own personal coach</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-2 flex-shrink-0" />
-                    <span>Step-by-Step Guidance from Home</span>
+                    <span>Easy-to-follow plans from home</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-2 flex-shrink-0" />
@@ -671,7 +672,7 @@ function App() {
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-2 flex-shrink-0" />
-                    <span>Exclusive Health Club Community</span>
+                    <span>Friendly community that has your back</span>
                   </div>
                 </div>
                 
@@ -698,10 +699,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
-              Why The Internet Health Club Changes Everything
+              Why People Love the Health Club
             </h3>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We're not just another fitness program. We deliver step-by-step remote guidance into the path of designing YOUR figure — with a community that believes in your success.
+              It's not a fancy app or a complicated program. It's simple: a coach, a plan, and people who care. That's why it works.
             </p>
           </div>
           
@@ -710,12 +711,12 @@ function App() {
               <div className={`w-20 h-20 bg-gradient-to-r ${theme.gradient} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
                 <Users className="h-10 w-10 group-hover:animate-pulse" />
               </div>
-              <h4 className="text-xl font-semibold mb-4 group-hover:text-red-400 transition-colors">Remote Coaching That Works</h4>
+              <h4 className="text-xl font-semibold mb-4 group-hover:text-red-400 transition-colors">A Real Coach in Your Corner</h4>
               <p className="text-gray-300 group-hover:text-white transition-colors">
-                Your personal coach is just a message away. They design your workouts, your meals, and your recovery — all remotely, all personalized. No gym membership required.
+                Your coach is a message away. They tell you what to eat, what to do, and keep you on track. It's like having a trainer without the gym price tag.
               </p>
               <div className="mt-4 text-red-400 font-semibold">
-                💪 1-on-1 remote guidance
+                💪 Real person, real help
               </div>
             </div>
             
@@ -723,12 +724,12 @@ function App() {
               <div className={`w-20 h-20 bg-gradient-to-r ${theme.gradient} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
                 <Target className="h-10 w-10 group-hover:animate-pulse" />
               </div>
-              <h4 className="text-xl font-semibold mb-4 group-hover:text-blue-400 transition-colors">Proven Figure Design System</h4>
+              <h4 className="text-xl font-semibold mb-4 group-hover:text-blue-400 transition-colors">It Actually Works</h4>
               <p className="text-gray-300 group-hover:text-white transition-colors">
-                Our step-by-step system has been proven by thousands of members. No gimmicks, no false promises — just a proven remote pathway to the body you want.
+                No gimmicks. No magic pills. Just a simple plan that fits your life. Thousands of people have done it and you can too.
               </p>
               <div className="mt-4 text-blue-400 font-semibold">
-                📈 4.9/5 member success rate
+                📈 4.9 out of 5 stars from members
               </div>
             </div>
             
@@ -736,12 +737,12 @@ function App() {
               <div className={`w-20 h-20 bg-gradient-to-r ${theme.gradient} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
                 <Shield className="h-10 w-10 group-hover:animate-pulse" />
               </div>
-              <h4 className="text-xl font-semibold mb-4 group-hover:text-green-400 transition-colors">Risk-Free Transformation</h4>
+              <h4 className="text-xl font-semibold mb-4 group-hover:text-green-400 transition-colors">Try It Risk-Free</h4>
               <p className="text-gray-300 group-hover:text-white transition-colors">
-                We're so confident in our remote coaching system that we guarantee your results. If you don't see progress in 30 days, we'll refund every penny.
+                Not sure? No problem. Try it for 30 days. If you don't like it or don't see results, you get your money back. Simple as that.
               </p>
               <div className="mt-4 text-green-400 font-semibold">
-                🛡️ 30-day money-back guarantee
+                🛡️ 30-day money back, no questions
               </div>
             </div>
           </div>
@@ -759,18 +760,18 @@ function App() {
               <span className="font-black text-xl">{theme.urgencyText} {formatTime(timeLeft)}</span>
             </div>
             <h3 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
-              Your Complementary Internet Health Club Membership Is Waiting
+              Your Free Health Club Membership Is Ready
             </h3>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-              Members of The Internet Health Site now enjoy complementary membership in the Internet Health Club — 
-              step-by-step remote guidance into the path of designing your figure. Stop waiting. Start designing.
+              As an Internet Health Site member, you get free access to the Health Club. 
+              A coach, a plan, and a community — all waiting for you. Don't put it off.
             </p>
           </div>
           
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 max-w-2xl mx-auto">
             <div className="text-center mb-6">
-              <div className="text-3xl font-bold mb-2">Start Your Remote Figure Design</div>
-              <div className="text-sm opacity-80">Join the Internet Health Club — Transform from Anywhere</div>
+              <div className="text-3xl font-bold mb-2">Ready to Feel Good Again?</div>
+              <div className="text-sm opacity-80">Join the Health Club — it's free with your membership</div>
             </div>
             <div className="flex items-center justify-center mb-4">
               <div className="flex -space-x-2">
@@ -783,8 +784,8 @@ function App() {
               <span className="ml-4 text-sm opacity-80">Members celebrating wins today</span>
             </div>
             <p className="italic opacity-80">
-              "The best time to start was yesterday. The second best time is now." 
-              — Your future self will thank you for joining the Internet Health Club today.
+              "I kept putting it off. Then one day I just signed up and it was the best decision I ever made." 
+              — You'll wish you started sooner. Everyone does.
             </p>
           </div>
           
@@ -905,6 +906,8 @@ function App() {
       )}
       
       <script src="https://safeclick.kenjiai.com/js/form_embed.js"></script>
+
+      <SocialProofToast />
 
       <style>{`
         @keyframes fadeIn {
