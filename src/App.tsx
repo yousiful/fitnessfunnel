@@ -126,8 +126,8 @@ function App() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="bg-white shadow-lg fixed w-full top-0 z-40 backdrop-blur-md bg-white/95 border-b-2 border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-3 sm:py-4">
             <div className="flex items-center">
               <AnimatedHeartLogo size="md" showText={true} />
               <div className={`ml-4 bg-gradient-to-r ${theme.gradient} text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse`}>
@@ -137,10 +137,11 @@ function App() {
             <div className="flex items-center space-x-4">
               <button
                 onClick={() => setShowSurvey(true)}
-                className={`bg-gradient-to-r ${theme.gradient} ${theme.gradientHover} text-white px-6 py-2 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl relative`}
+                className={`bg-gradient-to-r ${theme.gradient} ${theme.gradientHover} text-white px-3 sm:px-6 py-2 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl relative`}
               >
-                <span className="mr-2">{theme.emoji}</span>
-                {theme.giftText}
+                <span className="mr-1 sm:mr-2">{theme.emoji}</span>
+                <span className="hidden sm:inline">{theme.giftText}</span>
+                <span className="sm:hidden">Start Now</span>
                 <Sparkles className="h-4 w-4 inline ml-2" />
               </button>
             </div>
@@ -154,15 +155,15 @@ function App() {
           {/* Urgency Banner */}
           <div className={`bg-gradient-to-r ${theme.gradient} text-white text-center py-5 rounded-xl mb-8 animate-pulse relative overflow-hidden shadow-2xl border-4 border-yellow-400`}>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer" />
-            <div className="flex items-center justify-center space-x-3 relative z-10">
-              <span className="text-xl">{theme.emoji}</span>
-              <Sparkles className="h-5 w-5 drop-shadow-lg" />
-              <span className="font-black text-xl drop-shadow-lg">{theme.urgencyText} {formatTime(timeLeft)}</span>
-              <Sparkles className="h-5 w-5 drop-shadow-lg" />
-              <span className="text-xl">{theme.secondaryEmoji}</span>
+            <div className="flex items-center justify-center space-x-2 sm:space-x-3 relative z-10 flex-wrap">
+              <span className="text-lg sm:text-xl">{theme.emoji}</span>
+              <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 drop-shadow-lg" />
+              <span className="font-black text-sm sm:text-xl drop-shadow-lg">{theme.urgencyText} {formatTime(timeLeft)}</span>
+              <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 drop-shadow-lg hidden sm:block" />
+              <span className="text-lg sm:text-xl hidden sm:block">{theme.secondaryEmoji}</span>
             </div>
             <div className="text-sm mt-2 font-bold relative z-10 drop-shadow-lg">
-              Limited Spots Available — Don't Miss Your Chance to Transform!
+              Limited Spots Available  - Don't Miss Your Chance to Transform!
             </div>
           </div>
 
@@ -174,14 +175,14 @@ function App() {
               <Sparkles className="h-5 w-5 ml-2 text-yellow-500" />
             </div>
 
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
               {theme.heroHeadline}
               <span className={`block ${theme.accentColor} mt-2`}>Your Transformation Starts TODAY</span>
               <span className={`block ${theme.accentColor} mt-2 text-3xl md:text-4xl`}>{theme.heroSubline}</span>
             </h2>
             
             <p className="text-xl md:text-2xl text-gray-700 mb-4 max-w-4xl mx-auto font-medium">
-              If you're part of <span className={`${theme.accentColor} font-bold`}>The Internet Health Site</span>, great news — 
+              If you're part of <span className={`${theme.accentColor} font-bold`}>The Internet Health Site</span>, great news  - 
               you already have <span className={`${theme.accentColor} font-bold`}>free access</span> to the 
               <span className={`${theme.accentColor} font-bold`}> Internet Health Club</span>. We'll walk you through 
               every step of getting in shape, right from your phone or computer.
@@ -214,7 +215,7 @@ function App() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <button
                 onClick={() => setShowSurvey(true)}
-                className={`group bg-gradient-to-r ${theme.gradient} ${theme.gradientHover} text-white px-10 py-5 rounded-full font-black text-xl transition-all duration-300 transform hover:scale-110 shadow-2xl flex items-center border-2 border-yellow-400`}
+                className={`group bg-gradient-to-r ${theme.gradient} ${theme.gradientHover} text-white px-6 sm:px-10 py-4 sm:py-5 rounded-full font-black text-base sm:text-xl transition-all duration-300 transform hover:scale-105 sm:hover:scale-110 shadow-2xl flex items-center border-2 border-yellow-400 w-full sm:w-auto justify-center`}
               >
                 <span>{theme.ctaPrimary}</span>
                 <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-2 transition-transform" />
@@ -268,7 +269,7 @@ function App() {
             </div>
             <div className="bg-white border-4 border-black rounded-xl px-6 py-3 inline-block transform rotate-1 shadow-[4px_4px_0px_0px_#000]">
               <p className="text-xl font-bold text-black">
-                Pick a goal and we'll show you exactly how to get there — from home! 💥
+                Pick a goal and we'll show you exactly how to get there  - from home! 💥
               </p>
             </div>
           </div>
@@ -293,7 +294,7 @@ function App() {
             <ComicGoal
               icon={Dumbbell}
               title="Get Stronger"
-              description="Build muscle at home with simple exercises. No fancy equipment needed — just you and a plan."
+              description="Build muscle at home with simple exercises. No fancy equipment needed  - just you and a plan."
               color="bg-green-500"
               bgColor="bg-green-200"
               index={2}
@@ -318,6 +319,50 @@ function App() {
               </button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-12 sm:py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+              See What the Health Club Is All About
+            </h3>
+            <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto">
+              Watch how real members are changing their lives from home
+            </p>
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-200">
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              poster="/community-group.webp"
+              className="w-full aspect-video bg-black"
+            >
+              <source src="/health-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div className="mt-6 sm:mt-8 text-center">
+            <button
+              onClick={() => setShowSurvey(true)}
+              className={`bg-gradient-to-r ${theme.gradient} ${theme.gradientHover} text-white px-6 sm:px-10 py-4 sm:py-5 rounded-full font-black text-base sm:text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl border-2 border-yellow-400 w-full sm:w-auto`}
+            >
+              {theme.ctaPrimary}
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Community Group Photo */}
+      <section className="py-8 sm:py-12 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl overflow-hidden shadow-xl">
+            <img src="/community-group.webp" alt="Our supportive health community" className="w-full h-auto object-cover" loading="lazy" />
+          </div>
+          <p className="text-center mt-4 text-gray-600 text-sm sm:text-base font-medium">Our growing community of people just like you, all working toward a healthier life</p>
         </div>
       </section>
 
@@ -365,7 +410,7 @@ function App() {
               Our Members Are Getting Real Results
             </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              These aren't just numbers — they're people like you who decided to start. Here's how they're doing.
+              These aren't just numbers  - they're people like you who decided to start. Here's how they're doing.
             </p>
           </div>
           
@@ -380,7 +425,7 @@ function App() {
               </div>
               <h4 className="text-xl font-semibold mb-3">Weight Loss</h4>
               <p className="text-gray-600 mb-4">
-                Your coach builds a plan you can actually stick to. No crazy diets — just simple changes that work.
+                Your coach builds a plan you can actually stick to. No crazy diets  - just simple changes that work.
               </p>
               <ProgressBar progress={progressBars.weightLoss} label="Success Rate" color="bg-red-500" />
               <div className="text-sm text-red-600 font-semibold">🔥 89% achieve their goal weight</div>
@@ -428,7 +473,7 @@ function App() {
               </div>
               <h4 className="text-xl font-semibold mb-3">Community</h4>
               <p className="text-gray-600 mb-4">
-                You're never alone. Post a win, ask a question, or just vent — someone's always there.
+                You're never alone. Post a win, ask a question, or just vent  - someone's always there.
               </p>
               <ProgressBar progress={progressBars.community} label="Satisfaction Rate" color="bg-purple-500" />
               <div className="text-sm text-purple-600 font-semibold">❤️ 96% member satisfaction</div>
@@ -440,7 +485,7 @@ function App() {
               onClick={() => setShowSurvey(true)}
               className={`bg-gradient-to-r ${theme.gradient} ${theme.gradientHover} text-white px-10 py-5 rounded-full font-black text-xl transition-all duration-300 transform hover:scale-110 shadow-2xl border-2 border-yellow-400`}
             >
-              🎯 I Want These Results Too — From Home!
+              🎯 I Want These Results Too  - From Home!
             </button>
           </div>
         </div>
@@ -454,7 +499,7 @@ function App() {
               People Just Like You Are Doing It
             </h3>
             <p className="text-xl text-gray-600">
-              These are regular people — moms, dads, grandparents, busy workers — who finally found something that works
+              These are regular people  - moms, dads, grandparents, busy workers  - who finally found something that works
             </p>
           </div>
           
@@ -475,16 +520,16 @@ function App() {
                 </div>
               </div>
               <p className="text-gray-700 mb-4 italic">
-                "I never thought I could lose weight without going to a gym. My coach made it so easy — told me exactly what to eat and what exercises to do at home. 45 pounds gone and I feel amazing!"
+                "I never thought I could lose weight without going to a gym. My coach made it so easy  - told me exactly what to eat and what exercises to do at home. 45 pounds gone and I feel amazing!"
               </p>
               <div className="flex items-center">
-                <div className={`w-12 h-12 bg-gradient-to-r ${theme.gradient} rounded-full flex items-center justify-center text-white font-bold text-lg`}>S</div>
+                <img src="/testimonial-people.webp" alt="Sarah M." className="w-12 h-12 rounded-full object-cover object-[15%_center] border-2 border-red-300" />
                 <div className="ml-3">
                   <p className="font-semibold">Sarah M.</p>
-                  <p className="text-sm text-gray-500">Lost 45 lbs • Remote coaching member</p>
+                  <p className="text-sm text-gray-500">Lost 45 lbs from home</p>
                   <div className="flex items-center mt-1">
                     <Trophy className="h-4 w-4 text-yellow-500 mr-1" />
-                    <span className="text-xs text-yellow-600 font-medium">Figure Design Champion</span>
+                    <span className="text-xs text-yellow-600 font-medium">Goal Crusher</span>
                   </div>
                 </div>
               </div>
@@ -509,10 +554,10 @@ function App() {
                 "After knee surgery I thought I was done. My coach gave me simple exercises to do at home and checked on me every day. Now I'm hiking again! I honestly can't believe it."
               </p>
               <div className="flex items-center">
-                <div className={`w-12 h-12 bg-gradient-to-r ${theme.gradient} rounded-full flex items-center justify-center text-white font-bold text-lg`}>M</div>
+                <img src="/testimonial-people.webp" alt="Mike R." className="w-12 h-12 rounded-full object-cover object-center border-2 border-blue-300" />
                 <div className="ml-3">
                   <p className="font-semibold">Mike R.</p>
-                  <p className="text-sm text-gray-500">Full Recovery • Remote coaching member</p>
+                  <p className="text-sm text-gray-500">Full recovery from home</p>
                   <div className="flex items-center mt-1">
                     <Award className="h-4 w-4 text-blue-500 mr-1" />
                     <span className="text-xs text-blue-600 font-medium">Comeback Champion</span>
@@ -540,13 +585,13 @@ function App() {
                 "I'm 62 and in the best shape of my life. I do everything from home. I can keep up with my grandkids now and my back doesn't hurt anymore. Wish I'd found this years ago."
               </p>
               <div className="flex items-center">
-                <div className={`w-12 h-12 bg-gradient-to-r ${theme.gradient} rounded-full flex items-center justify-center text-white font-bold text-lg`}>L</div>
+                <img src="/testimonial-people.webp" alt="Linda K." className="w-12 h-12 rounded-full object-cover object-[85%_center] border-2 border-green-300" />
                 <div className="ml-3">
                   <p className="font-semibold">Linda K.</p>
-                  <p className="text-sm text-gray-500">Mobility Master • Remote coaching member</p>
+                  <p className="text-sm text-gray-500">Feels 20 years younger</p>
                   <div className="flex items-center mt-1">
                     <Zap className="h-4 w-4 text-green-500 mr-1" />
-                    <span className="text-xs text-green-600 font-medium">Vitality Veteran</span>
+                    <span className="text-xs text-green-600 font-medium">Vitality Star</span>
                   </div>
                 </div>
               </div>
@@ -571,7 +616,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Everything You Need — All Included Free
+              Everything You Need  - All Included Free
             </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Your Health Club membership comes with everything. A coach, a plan, a community, and simple tools to track your progress.
@@ -598,7 +643,7 @@ function App() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg mb-2 group-hover:text-blue-600 transition-colors">Simple Plans on Your Phone</h4>
-                    <p className="text-gray-600">Easy videos to follow along with, simple meal ideas, and daily check-ins — all right on your phone.</p>
+                    <p className="text-gray-600">Easy videos to follow along with, simple meal ideas, and daily check-ins  - all right on your phone.</p>
                     <div className="mt-2 text-sm text-blue-600 font-medium">📱 Works on any phone or computer</div>
                   </div>
                 </div>
@@ -654,7 +699,7 @@ function App() {
                     <Sparkles className="h-5 w-5 ml-2" />
                   </div>
                   <h4 className="text-2xl font-bold mb-2">Free Health Club Membership!</h4>
-                  <p className="text-yellow-100 font-bold">Spots are limited — Offer ends in {formatTime(timeLeft)}</p>
+                  <p className="text-yellow-100 font-bold">Spots are limited  - Offer ends in {formatTime(timeLeft)}</p>
                 </div>
                 
                 <div className="space-y-4 mb-6">
@@ -764,14 +809,14 @@ function App() {
             </h3>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
               As an Internet Health Site member, you get free access to the Health Club. 
-              A coach, a plan, and a community — all waiting for you. Don't put it off.
+              A coach, a plan, and a community  - all waiting for you. Don't put it off.
             </p>
           </div>
           
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 max-w-2xl mx-auto">
             <div className="text-center mb-6">
               <div className="text-3xl font-bold mb-2">Ready to Feel Good Again?</div>
-              <div className="text-sm opacity-80">Join the Health Club — it's free with your membership</div>
+              <div className="text-sm opacity-80">Join the Health Club  - it's free with your membership</div>
             </div>
             <div className="flex items-center justify-center mb-4">
               <div className="flex -space-x-2">
@@ -785,7 +830,7 @@ function App() {
             </div>
             <p className="italic opacity-80">
               "I kept putting it off. Then one day I just signed up and it was the best decision I ever made." 
-              — You'll wish you started sooner. Everyone does.
+               - You'll wish you started sooner. Everyone does.
             </p>
           </div>
           
@@ -832,7 +877,7 @@ function App() {
               </div>
             </div>
             <p className="text-gray-400 mb-2 font-semibold">
-              The Internet Health Site × Internet Health Club
+              The Internet Health Site � - Internet Health Club
             </p>
             <p className="text-gray-500 mb-4 text-sm">
               Step-by-step remote guidance into the path of designing your figure. Complementary for all members.
@@ -854,8 +899,8 @@ function App() {
       {/* Survey Popup */}
       {showSurvey && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-fadeIn">
-          <div className="bg-white rounded-2xl max-w-md w-full max-h-[90vh] shadow-2xl transform animate-slideUp relative flex flex-col">
-            <div className="absolute -top-6 -right-6 bg-yellow-400 text-gray-900 font-black text-xs px-4 py-2 rounded-full transform rotate-12 shadow-2xl border-4 border-white z-30 animate-pulse">
+          <div className="bg-white rounded-2xl max-w-md w-full max-h-[90vh] shadow-2xl transform animate-slideUp relative flex flex-col mx-2 sm:mx-0">
+            <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 bg-yellow-400 text-gray-900 font-black text-[10px] sm:text-xs px-3 sm:px-4 py-1.5 sm:py-2 rounded-full transform rotate-12 shadow-2xl border-4 border-white z-30 animate-pulse">
               {theme.headerBadge}
             </div>
 
@@ -868,7 +913,7 @@ function App() {
                     <h4 className="font-black text-lg">{theme.surveyHeading}</h4>
                     <Sparkles className="h-5 w-5 ml-2" />
                   </div>
-                  <p className="text-sm opacity-80 font-semibold mt-1">Quick Assessment — Design Your Figure</p>
+                  <p className="text-sm opacity-80 font-semibold mt-1">Quick Assessment  - Design Your Figure</p>
                 </div>
                 <button
                   onClick={() => setShowSurvey(false)}

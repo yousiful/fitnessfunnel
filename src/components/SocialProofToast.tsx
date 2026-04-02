@@ -81,10 +81,10 @@ export function SocialProofToast() {
 
   return (
     <div
-      className="fixed bottom-5 left-5 z-50 pointer-events-none"
+      className="fixed bottom-3 left-3 sm:bottom-5 sm:left-5 z-50 pointer-events-none"
       style={{ animation: visible ? 'slideInLeft 0.4s ease-out' : 'slideOutLeft 0.3s ease-in' }}
     >
-      <div className="bg-white rounded-xl shadow-2xl border border-gray-200 px-4 py-3 max-w-[300px] pointer-events-auto">
+      <div className="bg-white rounded-xl shadow-2xl border border-gray-200 px-3 sm:px-4 py-2.5 sm:py-3 max-w-[260px] sm:max-w-[300px] pointer-events-auto">
         <div className="flex items-start gap-3">
           <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-red-500 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-sm border-2 border-white shadow">
             {current.first[0]}{current.initial}
