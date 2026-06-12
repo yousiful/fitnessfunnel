@@ -21,11 +21,16 @@ import {
   Dumbbell,
   Activity,
   Gift,
-  Sparkles
+  Sparkles,
+  LogIn,
+  ChevronDown,
+  ChevronUp,
+  HelpCircle
 } from 'lucide-react';
 
 function App() {
   const [showSurvey, setShowSurvey] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [timeLeft, setTimeLeft] = useState(24 * 60 * 60);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [hoveredGoal, setHoveredGoal] = useState<number | null>(null);
@@ -37,6 +42,7 @@ function App() {
   });
 
   const theme = getHolidayTheme();
+  const MEMBERS_LOGIN_URL = 'https://5ijobzm3ovbhqenhpjix.app.clientclub.net/';
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -122,6 +128,41 @@ function App() {
     </div>
   );
 
+  const faqs = [
+    {
+      q: "I've tried other programs before and quit. Why would this be any different?",
+      a: "Most programs hand you a plan and leave you to figure it out alone. That's why people quit. Here you get a real coach who checks in on you and a community that keeps you going. You're not doing this by yourself, and that is what makes it stick."
+    },
+    {
+      q: "I'm really out of shape and a total beginner. Can I still do this?",
+      a: "Absolutely. This is built for beginners. Your coach meets you exactly where you are and builds a plan around your level. You move at your own pace, and everything is explained step by step."
+    },
+    {
+      q: "Do I need a gym or any equipment?",
+      a: "No. Everything is designed to be done from home with little or no equipment. All you need is your phone or computer and a bit of space to move."
+    },
+    {
+      q: "How much time does this take each week?",
+      a: "Most members start with just 20 to 30 minutes a few times a week. The plan fits around your life, not the other way around. You can always do more once you build momentum."
+    },
+    {
+      q: "Is it really free? What's the catch?",
+      a: "Yes. If you're a member of The Internet Health Site, Health Club access is included at no extra cost. There is no catch. We want you to actually use it and get real results."
+    },
+    {
+      q: "What if I have an injury or a health condition?",
+      a: "Your coach takes your situation into account and adjusts your plan so you can move safely. Many of our members came to us recovering from injuries. As always, check with your doctor before starting anything new."
+    },
+    {
+      q: "How fast will I see results?",
+      a: "A lot of members feel more energy within the first couple of weeks. Visible changes usually show up in the first month once you settle into a rhythm. How fast depends on you, and your coach is there to keep you consistent."
+    },
+    {
+      q: "What if it turns out it's not for me?",
+      a: "You're covered by our 30-day guarantee. Give it an honest try, and if it's not a fit you've lost nothing. We would rather you start with zero risk."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -134,7 +175,16 @@ function App() {
                 {theme.headerBadge}
               </div>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <a
+                href={MEMBERS_LOGIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-gray-700 hover:text-gray-900 font-bold text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full border-2 border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-all duration-300"
+              >
+                <LogIn className="h-4 w-4 sm:mr-2" />
+                <span className="hidden sm:inline">Member Login</span>
+              </a>
               <button
                 onClick={() => setShowSurvey(true)}
                 className={`bg-gradient-to-r ${theme.gradient} ${theme.gradientHover} text-white px-3 sm:px-6 py-2 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl relative`}
@@ -165,6 +215,23 @@ function App() {
             <div className="text-sm mt-2 font-bold relative z-10 drop-shadow-lg">
               Limited Spots Available  - Don't Miss Your Chance to Transform!
             </div>
+          </div>
+
+          {/* Enrollment Scarcity Meter */}
+          <div className="bg-white rounded-xl p-4 sm:p-5 mb-8 max-w-2xl mx-auto shadow-lg border-2 border-red-200">
+            <div className="flex items-center justify-between mb-2 flex-wrap gap-1">
+              <span className="flex items-center text-xs sm:text-sm font-bold text-gray-800">
+                <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse mr-2" />
+                This month's free enrollment is almost full
+              </span>
+              <span className="text-xs sm:text-sm font-black text-red-600">Only 12 spots left</span>
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-2.5">
+              <div className="bg-gradient-to-r from-red-500 to-orange-500 h-2.5 rounded-full transition-all duration-1000" style={{ width: '88%' }} />
+            </div>
+            <p className="text-xs text-gray-500 mt-2 text-center">
+              88% of this month's free Health Club spots have already been claimed
+            </p>
           </div>
 
           <div className="text-center">
@@ -794,6 +861,60 @@ function App() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center bg-white px-5 py-2 rounded-full text-sm font-bold mb-4 shadow-md border-2 border-gray-100 text-gray-700">
+              <HelpCircle className="h-5 w-5 mr-2 text-red-500" />
+              Questions? We've Got Answers
+            </div>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Everything You're Wondering, Answered
+            </h3>
+            <p className="text-lg text-gray-600">
+              Still on the fence? Here are the questions we hear most from people just like you.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl shadow-md border-2 border-gray-100 overflow-hidden transition-all duration-300 hover:border-red-200"
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full flex items-center justify-between p-5 sm:p-6 text-left"
+                >
+                  <span className="font-bold text-base sm:text-lg text-gray-900 pr-4">{faq.q}</span>
+                  {openFaq === index ? (
+                    <ChevronUp className="h-5 w-5 text-red-500 flex-shrink-0" />
+                  ) : (
+                    <ChevronDown className="h-5 w-5 text-gray-400 flex-shrink-0" />
+                  )}
+                </button>
+                {openFaq === index && (
+                  <div className="px-5 sm:px-6 pb-5 sm:pb-6 -mt-1">
+                    <p className="text-gray-600 leading-relaxed">{faq.a}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-gray-600 mb-5 font-medium">Still have a question? The best way to get answers is to start.</p>
+            <button
+              onClick={() => setShowSurvey(true)}
+              className={`bg-gradient-to-r ${theme.gradient} ${theme.gradientHover} text-white px-10 py-5 rounded-full font-black text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl border-2 border-yellow-400`}
+            >
+              {theme.ctaPrimary}
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA Section */}
       <section className={`py-20 bg-gradient-to-r ${theme.gradient} text-white relative overflow-hidden shadow-2xl`}>
         <div className="absolute inset-0 bg-black/10"></div>
@@ -882,6 +1003,17 @@ function App() {
             <p className="text-gray-500 mb-4 text-sm">
               Step-by-step remote guidance into the path of designing your figure. Complementary for all members.
             </p>
+            <div className="mb-6">
+              <a
+                href={MEMBERS_LOGIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-gray-300 hover:text-white font-semibold text-sm px-5 py-2.5 rounded-full border-2 border-gray-700 hover:border-gray-500 hover:bg-gray-800 transition-all duration-300"
+              >
+                <LogIn className="h-4 w-4 mr-2" />
+                Already a member? Log in to the Health Club
+              </a>
+            </div>
             <div className="flex items-center justify-center space-x-4 mb-4 text-sm text-gray-500">
               <span>🔒 Secure & Private</span>
               <span>•</span>
