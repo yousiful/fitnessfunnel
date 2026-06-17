@@ -169,30 +169,32 @@ function App() {
       <header className="bg-white shadow-lg fixed w-full top-0 z-40 backdrop-blur-md bg-white/95 border-b-2 border-gray-100">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-3 sm:py-4">
-            <div className="flex items-center">
+            <div className="flex items-center min-w-0">
               <AnimatedHeartLogo size="md" showText={true} />
-              <div className={`ml-4 bg-gradient-to-r ${theme.gradient} text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse`}>
+              <div className={`ml-3 bg-gradient-to-r ${theme.gradient} text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse hidden sm:block`}>
                 {theme.headerBadge}
               </div>
             </div>
-            <div className="flex items-center space-x-2 sm:space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
               <a
                 href={MEMBERS_LOGIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-gray-700 hover:text-gray-900 font-bold text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full border-2 border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-all duration-300"
+                aria-label="Member login to the Health Club members area"
+                className="flex items-center text-gray-800 hover:text-gray-900 font-bold text-xs sm:text-sm px-3 sm:px-4 py-2.5 rounded-full border-2 border-gray-300 bg-gray-50 hover:border-gray-400 hover:bg-gray-100 transition-all duration-300 whitespace-nowrap"
               >
-                <LogIn className="h-4 w-4 sm:mr-2" />
+                <LogIn className="h-4 w-4 mr-1.5" />
+                <span className="sm:hidden">Log In</span>
                 <span className="hidden sm:inline">Member Login</span>
               </a>
               <button
                 onClick={() => setShowSurvey(true)}
-                className={`bg-gradient-to-r ${theme.gradient} ${theme.gradientHover} text-white px-3 sm:px-6 py-2 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl relative`}
+                className={`bg-gradient-to-r ${theme.gradient} ${theme.gradientHover} text-white px-3 sm:px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl relative whitespace-nowrap`}
               >
                 <span className="mr-1 sm:mr-2">{theme.emoji}</span>
                 <span className="hidden sm:inline">{theme.giftText}</span>
                 <span className="sm:hidden">Start Now</span>
-                <Sparkles className="h-4 w-4 inline ml-2" />
+                <Sparkles className="h-4 w-4 inline ml-1.5 sm:ml-2" />
               </button>
             </div>
           </div>
@@ -322,20 +324,20 @@ function App() {
       </section>
 
       {/* Comic Book Goals Section */}
-      <section className="py-20 bg-gradient-to-br from-yellow-100 via-orange-100 to-red-100 relative overflow-hidden">
+      <section className="py-12 sm:py-20 bg-gradient-to-br from-yellow-100 via-orange-100 to-red-100 relative overflow-hidden">
         <div className="absolute top-10 left-10 w-32 h-32 bg-blue-400 rounded-full opacity-20 animate-pulse"></div>
         <div className="absolute bottom-10 right-10 w-24 h-24 bg-green-400 rounded-full opacity-20 animate-pulse"></div>
         <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-red-400 rounded-full opacity-20 animate-bounce"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
-            <div className="inline-block bg-yellow-400 border-4 border-black rounded-2xl px-8 py-4 transform -rotate-2 shadow-[8px_8px_0px_0px_#000] mb-6">
-              <h2 className="text-4xl md:text-6xl font-black text-black uppercase tracking-wider">
+            <div className="inline-block bg-yellow-400 border-4 border-black rounded-2xl px-4 sm:px-8 py-3 sm:py-4 transform -rotate-2 shadow-[8px_8px_0px_0px_#000] mb-6 max-w-full">
+              <h2 className="text-2xl sm:text-4xl md:text-6xl font-black text-black uppercase tracking-wider">
                 BOOM! Your Goals Await!
               </h2>
             </div>
-            <div className="bg-white border-4 border-black rounded-xl px-6 py-3 inline-block transform rotate-1 shadow-[4px_4px_0px_0px_#000]">
-              <p className="text-xl font-bold text-black">
+            <div className="bg-white border-4 border-black rounded-xl px-4 sm:px-6 py-3 inline-block transform rotate-1 shadow-[4px_4px_0px_0px_#000] max-w-full">
+              <p className="text-base sm:text-xl font-bold text-black">
                 Pick a goal and we'll show you exactly how to get there  - from home! 💥
               </p>
             </div>
@@ -377,10 +379,10 @@ function App() {
           </div>
           
           <div className="text-center mt-16">
-            <div className={`bg-gradient-to-r ${theme.gradient} border-4 border-black rounded-2xl px-8 py-6 inline-block transform hover:scale-105 transition-all duration-300 shadow-[8px_8px_0px_0px_#000] cursor-pointer`}>
-              <button 
+            <div className={`bg-gradient-to-r ${theme.gradient} border-4 border-black rounded-2xl px-5 sm:px-8 py-4 sm:py-6 inline-block transform hover:scale-105 transition-all duration-300 shadow-[8px_8px_0px_0px_#000] cursor-pointer max-w-full`}>
+              <button
                 onClick={() => setShowSurvey(true)}
-                className="text-white font-black text-2xl uppercase tracking-wide"
+                className="text-white font-black text-lg sm:text-2xl uppercase tracking-wide"
               >
                 {theme.ctaPrimary}
               </button>
@@ -470,7 +472,7 @@ function App() {
       </section>
 
       {/* Benefits Section with Progress Bars */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -550,7 +552,7 @@ function App() {
           <div className="text-center mt-12">
             <button
               onClick={() => setShowSurvey(true)}
-              className={`bg-gradient-to-r ${theme.gradient} ${theme.gradientHover} text-white px-10 py-5 rounded-full font-black text-xl transition-all duration-300 transform hover:scale-110 shadow-2xl border-2 border-yellow-400`}
+              className={`bg-gradient-to-r ${theme.gradient} ${theme.gradientHover} text-white px-6 sm:px-10 py-4 sm:py-5 rounded-full font-black text-base sm:text-xl transition-all duration-300 transform hover:scale-105 sm:hover:scale-110 shadow-2xl border-2 border-yellow-400 w-full sm:w-auto`}
             >
               🎯 I Want These Results Too  - From Home!
             </button>
@@ -559,7 +561,7 @@ function App() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -668,18 +670,18 @@ function App() {
           <div className="text-center mt-12">
             <button
               onClick={() => setShowSurvey(true)}
-              className={`bg-gradient-to-r ${theme.gradient} ${theme.gradientHover} text-white px-10 py-5 rounded-full font-black text-xl transition-all duration-300 transform hover:scale-110 shadow-2xl flex items-center mx-auto border-2 border-yellow-400`}
+              className={`bg-gradient-to-r ${theme.gradient} ${theme.gradientHover} text-white px-6 sm:px-10 py-4 sm:py-5 rounded-full font-black text-base sm:text-xl transition-all duration-300 transform hover:scale-105 sm:hover:scale-110 shadow-2xl flex items-center justify-center mx-auto border-2 border-yellow-400 w-full sm:w-auto`}
             >
-              <Play className="mr-2 h-6 w-6" />
+              <Play className="mr-2 h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0" />
               Start My Remote Transformation
-              <ChevronRight className="ml-2 h-6 w-6" />
+              <ChevronRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0" />
             </button>
           </div>
         </div>
       </section>
 
       {/* Program Overview */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -807,7 +809,7 @@ function App() {
       </section>
 
       {/* Why Section */}
-      <section className="py-20 bg-gray-900 text-white relative overflow-hidden">
+      <section className="py-12 sm:py-20 bg-gray-900 text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
@@ -862,7 +864,7 @@ function App() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-20 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center bg-white px-5 py-2 rounded-full text-sm font-bold mb-4 shadow-md border-2 border-gray-100 text-gray-700">
@@ -907,7 +909,7 @@ function App() {
             <p className="text-gray-600 mb-5 font-medium">Still have a question? The best way to get answers is to start.</p>
             <button
               onClick={() => setShowSurvey(true)}
-              className={`bg-gradient-to-r ${theme.gradient} ${theme.gradientHover} text-white px-10 py-5 rounded-full font-black text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl border-2 border-yellow-400`}
+              className={`bg-gradient-to-r ${theme.gradient} ${theme.gradientHover} text-white px-6 sm:px-10 py-4 sm:py-5 rounded-full font-black text-base sm:text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl border-2 border-yellow-400 w-full sm:w-auto`}
             >
               {theme.ctaPrimary}
             </button>
@@ -916,7 +918,7 @@ function App() {
       </section>
 
       {/* Final CTA Section */}
-      <section className={`py-20 bg-gradient-to-r ${theme.gradient} text-white relative overflow-hidden shadow-2xl`}>
+      <section className={`py-12 sm:py-20 bg-gradient-to-r ${theme.gradient} text-white relative overflow-hidden shadow-2xl`}>
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="mb-8">
@@ -958,7 +960,7 @@ function App() {
           <div className="space-y-4">
             <button
               onClick={() => setShowSurvey(true)}
-              className="bg-white text-gray-900 px-14 py-6 rounded-full font-black text-2xl hover:bg-yellow-50 transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-yellow-400"
+              className="bg-white text-gray-900 px-8 sm:px-14 py-4 sm:py-6 rounded-full font-black text-lg sm:text-2xl hover:bg-yellow-50 transition-all duration-300 transform hover:scale-105 sm:hover:scale-110 shadow-2xl border-4 border-yellow-400 w-full sm:w-auto"
             >
               {theme.ctaSecondary}
             </button>
