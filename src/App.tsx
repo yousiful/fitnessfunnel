@@ -146,8 +146,8 @@ function App() {
       a: "Most members start with just 20 to 30 minutes a few times a week. The plan fits around your life, not the other way around. You can always do more once you build momentum."
     },
     {
-      q: "Is it really free? What's the catch?",
-      a: "Yes. If you're a member of The Internet Health Site, Health Club access is included at no extra cost. There is no catch. We want you to actually use it and get real results."
+      q: "Is it really as low as $7? What's the catch?",
+      a: "Yes. As a member of The Internet Health Site, you can get Health Club access for as low as $7. There is no catch. We keep it low because we want you to actually use it and get real results."
     },
     {
       q: "What if I have an injury or a health condition?",
@@ -224,7 +224,7 @@ function App() {
             <div className="flex items-center justify-between mb-2 flex-wrap gap-1">
               <span className="flex items-center text-xs sm:text-sm font-bold text-gray-800">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse mr-2" />
-                This month's free enrollment is almost full
+                This month's enrollment is almost full
               </span>
               <span className="text-xs sm:text-sm font-black text-red-600">Only 12 spots left</span>
             </div>
@@ -232,7 +232,7 @@ function App() {
               <div className="bg-gradient-to-r from-red-500 to-orange-500 h-2.5 rounded-full transition-all duration-1000" style={{ width: '88%' }} />
             </div>
             <p className="text-xs text-gray-500 mt-2 text-center">
-              88% of this month's free Health Club spots have already been claimed
+              88% of this month's Health Club spots have already been claimed
             </p>
           </div>
 
@@ -240,7 +240,7 @@ function App() {
             {/* Internet Health Club Badge */}
             <div className={`inline-flex items-center bg-gradient-to-r ${theme.badgeGradient} ${theme.accentColor} px-6 py-3 rounded-full text-sm font-bold mb-6 animate-bounce shadow-lg border-2 ${theme.borderAccent}`}>
               <Heart className="h-5 w-5 mr-2" />
-              Members of The Internet Health Site Now Enjoy Complementary Internet Health Club Access!
+              Internet Health Site Members Get Health Club Access for as Low as $7!
               <Sparkles className="h-5 w-5 ml-2 text-yellow-500" />
             </div>
 
@@ -252,8 +252,8 @@ function App() {
             
             <p className="text-xl md:text-2xl text-gray-700 mb-4 max-w-4xl mx-auto font-medium">
               If you're part of <span className={`${theme.accentColor} font-bold`}>The Internet Health Site</span>, great news  - 
-              you already have <span className={`${theme.accentColor} font-bold`}>free access</span> to the 
-              <span className={`${theme.accentColor} font-bold`}> Internet Health Club</span>. We'll walk you through 
+              you can get the <span className={`${theme.accentColor} font-bold`}>Internet Health Club</span> for
+              <span className={`${theme.accentColor} font-bold`}>as low as $7</span>. We'll walk you through
               every step of getting in shape, right from your phone or computer.
             </p>
 
@@ -298,7 +298,7 @@ function App() {
             {/* Internet Health Club Value Prop */}
             <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 max-w-md mx-auto shadow-2xl border-2 border-gray-200">
               <div className="text-center">
-                <span className="text-base font-bold text-gray-800">What You Get (Free with Your Membership):</span>
+                <span className="text-base font-bold text-gray-800">What You Get for as Low as $7:</span>
                 <div className="mt-3 space-y-2 text-sm font-semibold">
                   <div className="flex items-center justify-center space-x-2">
                     <span>💪</span>
@@ -685,7 +685,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Everything You Need  - All Included Free
+              Everything You Need, From as Low as $7
             </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Your Health Club membership comes with everything. A coach, a plan, a community, and simple tools to track your progress.
@@ -767,7 +767,7 @@ function App() {
                     <span className="font-black">{theme.name.toUpperCase()} FLASH ENROLLMENT</span>
                     <Sparkles className="h-5 w-5 ml-2" />
                   </div>
-                  <h4 className="text-2xl font-bold mb-2">Free Health Club Membership!</h4>
+                  <h4 className="text-2xl font-bold mb-2">Health Club Membership for as Low as $7!</h4>
                   <p className="text-yellow-100 font-bold">Spots are limited  - Offer ends in {formatTime(timeLeft)}</p>
                 </div>
                 
@@ -928,10 +928,10 @@ function App() {
               <span className="font-black text-xl">{theme.urgencyText} {formatTime(timeLeft)}</span>
             </div>
             <h3 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
-              Your Free Health Club Membership Is Ready
+              Your Health Club Membership Is Ready
             </h3>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-              As an Internet Health Site member, you get free access to the Health Club. 
+              As an Internet Health Site member, you can join the Health Club for as low as $7.
               A coach, a plan, and a community  - all waiting for you. Don't put it off.
             </p>
           </div>
@@ -939,7 +939,7 @@ function App() {
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 max-w-2xl mx-auto">
             <div className="text-center mb-6">
               <div className="text-3xl font-bold mb-2">Ready to Feel Good Again?</div>
-              <div className="text-sm opacity-80">Join the Health Club  - it's free with your membership</div>
+              <div className="text-sm opacity-80">Join the Health Club, as low as $7</div>
             </div>
             <div className="flex items-center justify-center mb-4">
               <div className="flex -space-x-2">
@@ -976,7 +976,7 @@ function App() {
               </div>
               <div className="flex items-center">
                 <Gift className="h-4 w-4 mr-2" />
-                <span>Complementary Membership</span>
+                <span>From $7</span>
               </div>
             </div>
             
@@ -1003,7 +1003,7 @@ function App() {
               The Internet Health Site � - Internet Health Club
             </p>
             <p className="text-gray-500 mb-4 text-sm">
-              Step-by-step remote guidance into the path of designing your figure. Complementary for all members.
+              Step-by-step remote guidance into the path of designing your figure. Now as low as $7.
             </p>
             <div className="mb-6">
               <a
