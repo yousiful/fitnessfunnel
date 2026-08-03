@@ -146,8 +146,8 @@ function App() {
       a: "Most members start with just 20 to 30 minutes a few times a week. The plan fits around your life, not the other way around. You can always do more once you build momentum."
     },
     {
-      q: "Is it really as low as $7? What's the catch?",
-      a: "Yes. As a member of The Internet Health Site, you can get Health Club access for as low as $7. There is no catch. We keep it low because we want you to actually use it and get real results."
+      q: "What does Health Club access actually cost?",
+      a: "As a member of The Internet Health Site, you unlock Health Club access at a mystery price, one that's revealed only once you start your enrollment. What we can tell you is it's set low on purpose, because we want you to actually use it and get real results."
     },
     {
       q: "What if I have an injury or a health condition?",
@@ -240,7 +240,7 @@ function App() {
             {/* Internet Health Club Badge */}
             <div className={`inline-flex items-center bg-gradient-to-r ${theme.badgeGradient} ${theme.accentColor} px-6 py-3 rounded-full text-sm font-bold mb-6 animate-bounce shadow-lg border-2 ${theme.borderAccent}`}>
               <Heart className="h-5 w-5 mr-2" />
-              Internet Health Site Members Get Health Club Access for as Low as $7!
+              Internet Health Site Members Unlock a Mystery Price on Health Club Access!
               <Sparkles className="h-5 w-5 ml-2 text-yellow-500" />
             </div>
 
@@ -251,9 +251,9 @@ function App() {
             </h2>
             
             <p className="text-xl md:text-2xl text-gray-700 mb-4 max-w-4xl mx-auto font-medium">
-              If you're part of <span className={`${theme.accentColor} font-bold`}>The Internet Health Site</span>, great news  - 
+              If you're part of <span className={`${theme.accentColor} font-bold`}>The Internet Health Site</span>, great news  -
               you can get the <span className={`${theme.accentColor} font-bold`}>Internet Health Club</span> for
-              <span className={`${theme.accentColor} font-bold`}>as low as $7</span>. We'll walk you through
+              <span className={`${theme.accentColor} font-bold`}>a mystery price</span> we only reveal when you unlock it. We'll walk you through
               every step of getting in shape, right from your phone or computer.
             </p>
 
@@ -298,7 +298,7 @@ function App() {
             {/* Internet Health Club Value Prop */}
             <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 max-w-md mx-auto shadow-2xl border-2 border-gray-200">
               <div className="text-center">
-                <span className="text-base font-bold text-gray-800">What You Get for as Low as $7:</span>
+                <span className="text-base font-bold text-gray-800">What You Get at Our Mystery Price:</span>
                 <div className="mt-3 space-y-2 text-sm font-semibold">
                   <div className="flex items-center justify-center space-x-2">
                     <span>💪</span>
@@ -685,7 +685,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Everything You Need, From as Low as $7
+              Everything You Need, at a Price We're Keeping a Mystery
             </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Your Health Club membership comes with everything. A coach, a plan, a community, and simple tools to track your progress.
@@ -767,7 +767,7 @@ function App() {
                     <span className="font-black">{theme.name.toUpperCase()} FLASH ENROLLMENT</span>
                     <Sparkles className="h-5 w-5 ml-2" />
                   </div>
-                  <h4 className="text-2xl font-bold mb-2">Health Club Membership for as Low as $7!</h4>
+                  <h4 className="text-2xl font-bold mb-2">Health Club Membership at a Mystery Price!</h4>
                   <p className="text-yellow-100 font-bold">Spots are limited  - Offer ends in {formatTime(timeLeft)}</p>
                 </div>
                 
@@ -931,7 +931,7 @@ function App() {
               Your Health Club Membership Is Ready
             </h3>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-              As an Internet Health Site member, you can join the Health Club for as low as $7.
+              As an Internet Health Site member, you can join the Health Club for a mystery price  - one that's revealed the moment you unlock it.
               A coach, a plan, and a community  - all waiting for you. Don't put it off.
             </p>
           </div>
@@ -939,7 +939,7 @@ function App() {
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 max-w-2xl mx-auto">
             <div className="text-center mb-6">
               <div className="text-3xl font-bold mb-2">Ready to Feel Good Again?</div>
-              <div className="text-sm opacity-80">Join the Health Club, as low as $7</div>
+              <div className="text-sm opacity-80">Join the Health Club  - Mystery Price Inside</div>
             </div>
             <div className="flex items-center justify-center mb-4">
               <div className="flex -space-x-2">
@@ -976,7 +976,7 @@ function App() {
               </div>
               <div className="flex items-center">
                 <Gift className="h-4 w-4 mr-2" />
-                <span>From $7</span>
+                <span>Mystery Price</span>
               </div>
             </div>
             
@@ -1003,7 +1003,7 @@ function App() {
               The Internet Health Site � - Internet Health Club
             </p>
             <p className="text-gray-500 mb-4 text-sm">
-              Step-by-step remote guidance into the path of designing your figure. Now as low as $7.
+              Step-by-step remote guidance into the path of designing your figure. Now at a mystery price.
             </p>
             <div className="mb-6">
               <a
