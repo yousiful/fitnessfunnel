@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-06T21:00:44.818Z",
+  "title": "Design System: Health Club",
+  "extensions": {
+    "colorMeta": {
+      "night": {
+        "role": "neutral",
+        "displayName": "Night Indigo",
+        "canonical": "#16123A",
+        "oklch": "oklch(21.5% 0.074 282.7)",
+        "tonalRamp": [
+          "#090427",
+          "#211F46",
+          "#3D3D63",
+          "#5C5D82",
+          "#7D7FA1",
+          "#A0A2C1",
+          "#C5C7E2",
+          "#EBECFF"
+        ]
+      },
+      "dusk": {
+        "role": "secondary",
+        "displayName": "Dawn Violet",
+        "canonical": "#3B2A6B",
+        "oklch": "oklch(34.2% 0.109 291.7)",
+        "tonalRamp": [
+          "#0F002D",
+          "#281651",
+          "#443575",
+          "#625693",
+          "#8379B2",
+          "#A59DD1",
+          "#C9C2F1",
+          "#EEE9FF"
+        ]
+      },
+      "coral": {
+        "role": "secondary",
+        "displayName": "Sunrise Coral",
+        "canonical": "#FF6B4A",
+        "oklch": "oklch(70.7% 0.187 34.1)",
+        "tonalRamp": [
+          "#290000",
+          "#510000",
+          "#7B1600",
+          "#A7341A",
+          "#D55134",
+          "#FF7150",
+          "#FF9D7D",
+          "#FFC8AA"
+        ]
+      },
+      "sun": {
+        "role": "primary",
+        "displayName": "Sun Gold",
+        "canonical": "#FFB23F",
+        "oklch": "oklch(81.8% 0.153 72.8)",
+        "tonalRamp": [
+          "#1C0300",
+          "#3D1B00",
+          "#613700",
+          "#875500",
+          "#B0740A",
+          "#DA9529",
+          "#FFB849",
+          "#FFE081"
+        ]
+      },
+      "sun-hover": {
+        "role": "primary",
+        "displayName": "Morning Gold",
+        "canonical": "#FFC25F",
+        "oklch": "oklch(85.1% 0.135 77.3)",
+        "tonalRamp": [
+          "#180600",
+          "#381F00",
+          "#5A3B00",
+          "#7F5911",
+          "#A6792B",
+          "#CF9A43",
+          "#F9BD5C",
+          "#FFE48B"
+        ]
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Morning Cream",
+        "canonical": "#FFF3E2",
+        "oklch": "oklch(96.9% 0.026 76.8)",
+        "tonalRamp": [
+          "#0D0B07",
+          "#28241F",
+          "#46413A",
+          "#666057",
+          "#898176",
+          "#ADA497",
+          "#D2C8B9",
+          "#F8EDDC"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Ground",
+        "canonical": "#120F2E",
+        "oklch": "oklch(19.3% 0.060 283.6)",
+        "tonalRamp": [
+          "#090622",
+          "#22213F",
+          "#3E3E5C",
+          "#5D5E7B",
+          "#7F809A",
+          "#A2A3BB",
+          "#C6C7DC",
+          "#ECEDFE"
+        ]
+      },
+      "ground-2": {
+        "role": "neutral",
+        "displayName": "Ground Raised",
+        "canonical": "#1B1742",
+        "oklch": "oklch(23.8% 0.079 282.9)",
+        "tonalRamp": [
+          "#090328",
+          "#211E49",
+          "#3D3D66",
+          "#5C5D84",
+          "#7D7FA3",
+          "#A0A2C3",
+          "#C5C6E4",
+          "#EBECFF"
+        ]
+      },
+      "ground-3": {
+        "role": "neutral",
+        "displayName": "Ground High",
+        "canonical": "#26205A",
+        "oklch": "oklch(28.8% 0.100 282.8)",
+        "tonalRamp": [
+          "#0A002E",
+          "#211A52",
+          "#3C3A71",
+          "#5A5B8F",
+          "#7C7DAE",
+          "#9FA0CE",
+          "#C3C5EE",
+          "#E9EBFF"
+        ]
+      },
+      "ground-3-hover": {
+        "role": "neutral",
+        "displayName": "Ground High Hover",
+        "canonical": "#312A6A",
+        "oklch": "oklch(33.1% 0.108 283.8)",
+        "tonalRamp": [
+          "#0B002F",
+          "#221954",
+          "#3D3876",
+          "#5B5994",
+          "#7C7CB3",
+          "#9F9FD3",
+          "#C3C4F2",
+          "#E9EAFF"
+        ]
+      },
+      "ground-lit": {
+        "role": "neutral",
+        "displayName": "Lit Ground",
+        "canonical": "#2A2050",
+        "oklch": "oklch(28.4% 0.084 289.5)",
+        "tonalRamp": [
+          "#0D0228",
+          "#251B4A",
+          "#413A68",
+          "#605A87",
+          "#817CA6",
+          "#A4A0C6",
+          "#C8C5E7",
+          "#EDEBFF"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Haze",
+        "canonical": "#C9BFD9",
+        "oklch": "oklch(82.1% 0.038 303.0)",
+        "tonalRamp": [
+          "#0D0911",
+          "#27232E",
+          "#443F4D",
+          "#645E6F",
+          "#867E92",
+          "#A9A0B7",
+          "#CEC4DE",
+          "#F3EAFF"
+        ]
+      },
+      "faint": {
+        "role": "neutral",
+        "displayName": "Far Haze",
+        "canonical": "#9D93B5",
+        "oklch": "oklch(68.3% 0.051 298.5)",
+        "tonalRamp": [
+          "#0D0816",
+          "#272133",
+          "#443E54",
+          "#645C77",
+          "#867D9B",
+          "#A99FC0",
+          "#CCC3E3",
+          "#F1E9FF"
+        ]
+      },
+      "alert": {
+        "role": "error",
+        "displayName": "Soft Alert",
+        "canonical": "#FF9C86",
+        "oklch": "oklch(78.9% 0.123 33.3)",
+        "tonalRamp": [
+          "#1E0000",
+          "#41150C",
+          "#672F23",
+          "#8F4C3D",
+          "#B96958",
+          "#E48975",
+          "#FFAC96",
+          "#FFD4C0"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Horizon Line",
+        "canonical": "rgba(255, 243, 226, 0.14)",
+        "tonalRamp": [
+          "rgba(255,243,226,0.04)",
+          "rgba(255,243,226,0.08)",
+          "rgba(255,243,226,0.14)",
+          "rgba(255,243,226,0.20)",
+          "rgba(255,243,226,0.28)",
+          "rgba(255,243,226,0.40)",
+          "rgba(255,243,226,0.55)",
+          "rgba(255,243,226,0.75)"
+        ]
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Strong Horizon Line",
+        "canonical": "rgba(255, 243, 226, 0.28)",
+        "tonalRamp": [
+          "rgba(255,243,226,0.04)",
+          "rgba(255,243,226,0.08)",
+          "rgba(255,243,226,0.14)",
+          "rgba(255,243,226,0.20)",
+          "rgba(255,243,226,0.28)",
+          "rgba(255,243,226,0.40)",
+          "rgba(255,243,226,0.55)",
+          "rgba(255,243,226,0.75)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "numeral-timer": {
+        "displayName": "Numeral Timer",
+        "purpose": "Player countdown; the rest countdown runs at 120px in haze."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "Today's minutes on the sky."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "The finish moment."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Sign-in heading and sky-band tab titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Workout names and sheet titles (28-38px)."
+      },
+      "section": {
+        "displayName": "Section",
+        "purpose": "Goal groups, Milestones, Weight (22-24px)."
+      },
+      "item": {
+        "displayName": "Item",
+        "purpose": "List row titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Instructions, cues, blurbs."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Every button label."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Tab labels, weekday names, meta lines (13-15px)."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sun-glow",
+        "value": "0 10px 28px -12px rgba(255, 178, 63, 0.7)",
+        "purpose": "Under the sun button."
+      },
+      {
+        "name": "play-glow",
+        "value": "0 14px 34px -14px rgba(255, 178, 63, 0.8)",
+        "purpose": "Under the player's play/pause disc."
+      },
+      {
+        "name": "sun-halo",
+        "value": "0 0 60px rgba(255, 190, 90, 0.55)",
+        "purpose": "The sun disc inside the sky."
+      },
+      {
+        "name": "toast-lift",
+        "value": "0 16px 40px -16px rgba(0, 0, 0, 0.8)",
+        "purpose": "Milestone toast floating over content."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Default easing for transitions and entrances."
+      },
+      {
+        "name": "press",
+        "value": "transform 160ms ease-out; scale 0.97 (choices 0.985)",
+        "purpose": "Tactile press on buttons and choices."
+      },
+      {
+        "name": "rise-in",
+        "value": "520ms ease-out; translateY 14px to 0 with fade",
+        "purpose": "Entrance for sheets, toasts, and step content."
+      },
+      {
+        "name": "sky-fade",
+        "value": "opacity 1800ms ease-out",
+        "purpose": "Sky gradient layers cross-fade with progress."
+      },
+      {
+        "name": "sun-climb",
+        "value": "transform 2000ms ease-out",
+        "purpose": "The sun rises to progress height; replays after a finished workout."
+      },
+      {
+        "name": "stamp",
+        "value": "700ms ease-out after 1500ms; scale 1.6 to 1 with blur clearing",
+        "purpose": "Today's sun lands on the week strip after a workout."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "all animation and transition durations 1ms",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "content-max",
+        "value": "576px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Sun Button",
+      "kind": "button",
+      "refersTo": "button-sun",
+      "description": "The one primary action per view; Today's Start button runs it at 64px.",
+      "html": "<button class=\"ds-btn ds-btn-sun\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M6 4l14 8-14 8z\"/></svg> Start today's workout</button>",
+      "css": ":host{--night:#16123A;--sun:#FFB23F;--cream:#FFF3E2;--ground:#120F2E;--ground-2:#1B1742;--ground-3:#26205A;--line:rgba(255,243,226,0.14);--line-strong:rgba(255,243,226,0.28);--muted:#C9BFD9;--faint:#9D93B5;--ease-out:cubic-bezier(0.16,1,0.3,1);}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 24px;border-radius:18px;border:0;font:700 18px/1 \"Figtree Variable\",system-ui,sans-serif;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 160ms,border-color 160ms,box-shadow 160ms;}.ds-btn:active{transform:scale(0.97);}.ds-btn:focus-visible{outline:3px solid var(--sun);outline-offset:3px;}.ds-btn-sun{background:var(--sun);color:var(--night);box-shadow:0 10px 28px -12px rgba(255,178,63,0.7);}.ds-btn-sun:hover{background:#FFC25F;}.ds-btn-sun:disabled{background:var(--ground-3);color:var(--faint);box-shadow:none;cursor:default;}"
+    },
+    {
+      "name": "Raised Button",
+      "kind": "button",
+      "refersTo": "button-raised",
+      "description": "Replaces the sun button once today is done.",
+      "html": "<button class=\"ds-btn ds-btn-raised\">Do another workout</button>",
+      "css": ":host{--night:#16123A;--sun:#FFB23F;--cream:#FFF3E2;--ground:#120F2E;--ground-2:#1B1742;--ground-3:#26205A;--line:rgba(255,243,226,0.14);--line-strong:rgba(255,243,226,0.28);--muted:#C9BFD9;--faint:#9D93B5;--ease-out:cubic-bezier(0.16,1,0.3,1);}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 24px;border-radius:18px;border:0;font:700 18px/1 \"Figtree Variable\",system-ui,sans-serif;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 160ms,border-color 160ms,box-shadow 160ms;}.ds-btn:active{transform:scale(0.97);}.ds-btn:focus-visible{outline:3px solid var(--sun);outline-offset:3px;}.ds-btn-raised{background:var(--ground-3);color:var(--cream);}.ds-btn-raised:hover{background:#312A6A;}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary and exit actions: End workout, Sign out, Send a new code.",
+      "html": "<button class=\"ds-btn ds-btn-ghost\">End workout</button>",
+      "css": ":host{--night:#16123A;--sun:#FFB23F;--cream:#FFF3E2;--ground:#120F2E;--ground-2:#1B1742;--ground-3:#26205A;--line:rgba(255,243,226,0.14);--line-strong:rgba(255,243,226,0.28);--muted:#C9BFD9;--faint:#9D93B5;--ease-out:cubic-bezier(0.16,1,0.3,1);}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 24px;border-radius:18px;border:0;font:700 18px/1 \"Figtree Variable\",system-ui,sans-serif;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 160ms,border-color 160ms,box-shadow 160ms;}.ds-btn:active{transform:scale(0.97);}.ds-btn:focus-visible{outline:3px solid var(--sun);outline-offset:3px;}.ds-btn-ghost{background:transparent;color:var(--cream);border:1.5px solid var(--line-strong);}.ds-btn-ghost:hover{border-color:var(--cream);}"
+    },
+    {
+      "name": "Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Large text input; the border turns sun gold on focus.",
+      "html": "<input class=\"ds-field\" placeholder=\"you@email.com\" />",
+      "css": ":host{--night:#16123A;--sun:#FFB23F;--cream:#FFF3E2;--ground:#120F2E;--ground-2:#1B1742;--ground-3:#26205A;--line:rgba(255,243,226,0.14);--line-strong:rgba(255,243,226,0.28);--muted:#C9BFD9;--faint:#9D93B5;--ease-out:cubic-bezier(0.16,1,0.3,1);}.ds-field{width:100%;min-height:58px;padding:0 18px;border-radius:16px;background:var(--ground-2);color:var(--cream);border:1.5px solid var(--line);font:600 19px \"Figtree Variable\",system-ui,sans-serif;caret-color:var(--sun);transition:border-color 160ms;}.ds-field::placeholder{color:var(--faint);font-weight:500;}.ds-field:focus{outline:none;border-color:var(--sun);}"
+    },
+    {
+      "name": "Choice",
+      "kind": "card",
+      "refersTo": "choice",
+      "description": "Full-width selectable row for goal, level, and settings.",
+      "html": "<div style=\"display:grid;gap:10px\"><button class=\"ds-choice\" aria-pressed=\"true\">Lose weight</button><button class=\"ds-choice\" aria-pressed=\"false\">Move better</button></div>",
+      "css": ":host{--night:#16123A;--sun:#FFB23F;--cream:#FFF3E2;--ground:#120F2E;--ground-2:#1B1742;--ground-3:#26205A;--line:rgba(255,243,226,0.14);--line-strong:rgba(255,243,226,0.28);--muted:#C9BFD9;--faint:#9D93B5;--ease-out:cubic-bezier(0.16,1,0.3,1);}.ds-choice{width:100%;text-align:left;padding:18px 20px;border-radius:20px;cursor:pointer;background:var(--ground-2);color:var(--cream);border:1.5px solid var(--line);font:700 19px \"Figtree Variable\",system-ui,sans-serif;transition:border-color 160ms,background-color 160ms,transform 160ms var(--ease-out);}.ds-choice:hover{border-color:var(--line-strong);}.ds-choice:active{transform:scale(0.985);}.ds-choice[aria-pressed=\"true\"]{border-color:var(--sun);background:#2A2050;}.ds-choice:focus-visible{outline:3px solid var(--sun);outline-offset:3px;}"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Small pill for status such as the streak count.",
+      "html": "<span class=\"ds-chip\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#FFB23F\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z\"/></svg> 5 days</span>",
+      "css": ":host{--night:#16123A;--sun:#FFB23F;--cream:#FFF3E2;--ground:#120F2E;--ground-2:#1B1742;--ground-3:#26205A;--line:rgba(255,243,226,0.14);--line-strong:rgba(255,243,226,0.28);--muted:#C9BFD9;--faint:#9D93B5;--ease-out:cubic-bezier(0.16,1,0.3,1);}.ds-chip{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;background:var(--ground-2);color:var(--muted);font:600 15px \"Figtree Variable\",system-ui,sans-serif;border:1px solid var(--line);}"
+    },
+    {
+      "name": "Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Flat container on the ground; separates by tone and hairline, never shadow.",
+      "html": "<section class=\"ds-panel\"><h3 class=\"ds-panel-h\">Weight</h3><p class=\"ds-panel-n\">172 <span>lb</span></p></section>",
+      "css": ":host{--night:#16123A;--sun:#FFB23F;--cream:#FFF3E2;--ground:#120F2E;--ground-2:#1B1742;--ground-3:#26205A;--line:rgba(255,243,226,0.14);--line-strong:rgba(255,243,226,0.28);--muted:#C9BFD9;--faint:#9D93B5;--ease-out:cubic-bezier(0.16,1,0.3,1);}.ds-panel{background:var(--ground-2);border:1px solid var(--line);border-radius:22px;padding:20px;color:var(--cream);font-family:\"Figtree Variable\",system-ui,sans-serif;}.ds-panel-h{margin:0;font:800 22px/1.2 \"Bricolage Grotesque Variable\",\"Figtree Variable\",sans-serif;letter-spacing:-0.02em;}.ds-panel-n{margin:8px 0 0;font:800 28px/1 \"Bricolage Grotesque Variable\",\"Figtree Variable\",sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-0.03em;}.ds-panel-n span{font-size:16px;color:var(--muted);}"
+    },
+    {
+      "name": "Tab Bar",
+      "kind": "nav",
+      "refersTo": "tab-bar",
+      "description": "Fixed bottom navigation; the active tab is sun gold.",
+      "html": "<nav class=\"ds-tabbar\"><button class=\"ds-tab\" aria-current=\"page\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 2v8\"/><path d=\"m4.93 10.93 1.41 1.41\"/><path d=\"M2 18h2\"/><path d=\"M20 18h2\"/><path d=\"m19.07 10.93-1.41 1.41\"/><path d=\"M22 22H2\"/><path d=\"m8 6 4-4 4 4\"/><path d=\"M16 18a4 4 0 0 0-8 0\"/></svg>Today</button><button class=\"ds-tab\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 3v18h18\"/><path d=\"m19 9-5 5-4-4-3 3\"/></svg>Progress</button></nav>",
+      "css": ":host{--night:#16123A;--sun:#FFB23F;--cream:#FFF3E2;--ground:#120F2E;--ground-2:#1B1742;--ground-3:#26205A;--line:rgba(255,243,226,0.14);--line-strong:rgba(255,243,226,0.28);--muted:#C9BFD9;--faint:#9D93B5;--ease-out:cubic-bezier(0.16,1,0.3,1);}.ds-tabbar{display:grid;grid-template-columns:repeat(2,1fr);height:72px;background:rgba(18,15,46,0.92);backdrop-filter:blur(14px);border-top:1px solid var(--line);}.ds-tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:none;border:0;color:var(--faint);font:600 13px \"Figtree Variable\",system-ui,sans-serif;cursor:pointer;transition:color 160ms;}.ds-tab:hover{color:var(--muted);}.ds-tab[aria-current=\"page\"]{color:var(--sun);}.ds-tab:focus-visible{outline:3px solid var(--sun);outline-offset:-3px;}"
+    },
+    {
+      "name": "Sun Glyph",
+      "kind": "custom",
+      "refersTo": "sun-glyph",
+      "description": "Day and milestone state shape: full, half, unlit, future; today adds a dashed cream ring.",
+      "html": "<div class=\"ds-week\"><div class=\"ds-day\"><svg width=\"34\" height=\"34\" viewBox=\"0 0 34 34\" role=\"img\" aria-label=\"full\"><defs><radialGradient id=\"dsf\" cx=\"50%\" cy=\"40%\" r=\"60%\"><stop offset=\"0%\" stop-color=\"#FFF1C9\"/><stop offset=\"55%\" stop-color=\"#FFC861\"/><stop offset=\"100%\" stop-color=\"#FF8A3D\"/></radialGradient><clipPath id=\"dsh\"><rect x=\"0\" y=\"0\" width=\"34\" height=\"17\"/></clipPath></defs><circle cx=\"17\" cy=\"17\" r=\"10.54\" fill=\"url(#dsf)\"/></svg><span>Mon</span></div><div class=\"ds-day ds-today\"><svg width=\"34\" height=\"34\" viewBox=\"0 0 34 34\" role=\"img\" aria-label=\"half\"><defs><radialGradient id=\"dsf\" cx=\"50%\" cy=\"40%\" r=\"60%\"><stop offset=\"0%\" stop-color=\"#FFF1C9\"/><stop offset=\"55%\" stop-color=\"#FFC861\"/><stop offset=\"100%\" stop-color=\"#FF8A3D\"/></radialGradient><clipPath id=\"dsh\"><rect x=\"0\" y=\"0\" width=\"34\" height=\"17\"/></clipPath></defs><circle cx=\"17\" cy=\"17\" r=\"16\" fill=\"none\" stroke=\"#FFF3E2\" stroke-width=\"1.5\" stroke-dasharray=\"2 3\"/><circle cx=\"17\" cy=\"17\" r=\"10.54\" fill=\"none\" stroke=\"#FFB23F\" stroke-width=\"1.5\"/><circle cx=\"17\" cy=\"17\" r=\"10.54\" fill=\"#FFB23F\" clip-path=\"url(#dsh)\"/><line x1=\"3.4000000000000004\" x2=\"30.6\" y1=\"17\" y2=\"17\" stroke=\"#FFB23F\" stroke-width=\"1.5\"/></svg><span>Tue</span></div><div class=\"ds-day\"><svg width=\"34\" height=\"34\" viewBox=\"0 0 34 34\" role=\"img\" aria-label=\"none\"><defs><radialGradient id=\"dsf\" cx=\"50%\" cy=\"40%\" r=\"60%\"><stop offset=\"0%\" stop-color=\"#FFF1C9\"/><stop offset=\"55%\" stop-color=\"#FFC861\"/><stop offset=\"100%\" stop-color=\"#FF8A3D\"/></radialGradient><clipPath id=\"dsh\"><rect x=\"0\" y=\"0\" width=\"34\" height=\"17\"/></clipPath></defs><path d=\"M 6.46 17 A 10.54 10.54 0 0 1 27.54 17\" fill=\"none\" stroke=\"#9D93B5\" stroke-width=\"1.5\"/><line x1=\"3.4000000000000004\" x2=\"30.6\" y1=\"17\" y2=\"17\" stroke=\"#9D93B5\" stroke-width=\"1.5\"/></svg><span>Wed</span></div><div class=\"ds-day\"><svg width=\"34\" height=\"34\" viewBox=\"0 0 34 34\" role=\"img\" aria-label=\"future\"><defs><radialGradient id=\"dsf\" cx=\"50%\" cy=\"40%\" r=\"60%\"><stop offset=\"0%\" stop-color=\"#FFF1C9\"/><stop offset=\"55%\" stop-color=\"#FFC861\"/><stop offset=\"100%\" stop-color=\"#FF8A3D\"/></radialGradient><clipPath id=\"dsh\"><rect x=\"0\" y=\"0\" width=\"34\" height=\"17\"/></clipPath></defs><circle cx=\"17\" cy=\"17\" r=\"2.5\" fill=\"#9D93B5\"/></svg><span>Thu</span></div></div>",
+      "css": ":host{--night:#16123A;--sun:#FFB23F;--cream:#FFF3E2;--ground:#120F2E;--ground-2:#1B1742;--ground-3:#26205A;--line:rgba(255,243,226,0.14);--line-strong:rgba(255,243,226,0.28);--muted:#C9BFD9;--faint:#9D93B5;--ease-out:cubic-bezier(0.16,1,0.3,1);}.ds-week{display:flex;gap:16px;padding:16px;background:var(--ground);}.ds-day{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--faint);font:600 13px \"Figtree Variable\",system-ui,sans-serif;}.ds-today{color:var(--cream);}"
+    },
+    {
+      "name": "Sky",
+      "kind": "custom",
+      "refersTo": "sky",
+      "description": "Signature progress sky: gradient warmth and sun height equal today's progress, over a cream horizon. Hover to watch the sun climb.",
+      "html": "<div class=\"ds-sky\"><div class=\"ds-sky-sun\"></div><p class=\"ds-sky-n\"><b>12</b> / 20 min</p><div class=\"ds-sky-horizon\"></div></div>",
+      "css": ":host{--night:#16123A;--sun:#FFB23F;--cream:#FFF3E2;--ground:#120F2E;--ground-2:#1B1742;--ground-3:#26205A;--line:rgba(255,243,226,0.14);--line-strong:rgba(255,243,226,0.28);--muted:#C9BFD9;--faint:#9D93B5;--ease-out:cubic-bezier(0.16,1,0.3,1);}.ds-sky{position:relative;height:220px;overflow:hidden;background:linear-gradient(180deg,#1C1647 0%,#4B2C6E 40%,#B2486C 78%,#FF6B4A 100%);color:var(--cream);font-family:\"Figtree Variable\",system-ui,sans-serif;}.ds-sky-sun{position:absolute;left:74%;bottom:-60px;width:120px;height:120px;border-radius:50%;transform:translate(-50%,-80px);background:radial-gradient(circle at 50% 40%,#FFF1C9 0%,#FFC861 45%,#FF9A3D 100%);box-shadow:0 0 60px rgba(255,190,90,0.55);transition:transform 2000ms var(--ease-out);}.ds-sky:hover .ds-sky-sun{transform:translate(-50%,-120px);}.ds-sky-n{position:absolute;left:24px;bottom:20px;margin:0;font:700 22px/1 \"Bricolage Grotesque Variable\",\"Figtree Variable\",sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-0.03em;}.ds-sky-n b{font-size:64px;font-weight:800;}.ds-sky-horizon{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(255,243,226,0.55);}@media (prefers-reduced-motion:reduce){.ds-sky-sun{transition-duration:1ms;}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Each Day Is a Dawn",
+    "overview": "The member app is a sky over a ground. The top of every screen is a sky whose height and warmth are today's progress: pre-dawn indigo with no work done, coral at sunrise, gold once the plan is finished. The sun sits at progress height above a single cream horizon hairline; below the horizon is a deep indigo ground where the work happens (lists, panels, the Start button). The world refuses the fitness category default of a black screen and neon activity rings.\n\nDensity is low and the type is big because members use the app one-handed, at arm's length, with the phone propped on the floor mid-workout. Numbers are the loudest thing on any screen: heavy rounded Bricolage Grotesque numerals, tabular, set larger than the words around them. Everything else is Figtree at a generous 17px body.\n\nMotion is slow and warm where it carries meaning (the sky cross-fades over 1.8s, the sun climbs over 2s, the week stamp lands after a finished workout) and quick and tactile on controls (160ms press scale). Reduced-motion collapses all of it.",
+    "keyCharacteristics": [
+      "Sky above, ground below, one horizon hairline between them on every screen.",
+      "Progress is sun height and sun shape, never a ring or percentage bar.",
+      "One action color, sun gold, carried by the primary button, active tab, focus ring, and selection.",
+      "Heavy display numerals; plain warm Figtree for everything else.",
+      "Large targets: 56px minimum buttons, 72px tab bar, 96px play control."
+    ],
+    "rules": [
+      {
+        "name": "The One Sun Rule",
+        "body": "Sun gold is the only color that means \"do this\" or \"done\". Coral and violet never appear as UI fills, borders, or text outside the sky.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sky Is the Score Rule",
+        "body": "Gradients exist only in the sky, and the sky always encodes a real progress value (today's minutes over the daily target; fixed low values on sign-in and loading). Never use a gradient as decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Daylight Ink Rule",
+        "body": "Text sitting on the sky is cream until progress reaches 0.8, then flips to night. Check contrast against the sky at the progress value it will be shown at.",
+        "section": "colors"
+      },
+      {
+        "name": "The Heavy Numeral Rule",
+        "body": "Every count (minutes, streak, weight, seconds left) is set in the display face at 800 with tabular figures and -0.03em tracking, and is larger than the words that describe it.",
+        "section": "typography"
+      },
+      {
+        "name": "The Light, Not Lift Rule",
+        "body": "A shadow is light thrown by the sun. Neutral panels, choices, and fields never take a shadow; they separate by tone and hairline.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** open every screen with sky above ground and the cream horizon line between them; secondary tabs use the 20vh sky band.",
+      "**Do** keep sun gold as the only action color, with one sun button per view.",
+      "**Do** show day and milestone state with the Sun Glyph shapes (full, half, unlit, future) plus a text label.",
+      "**Do** set every count in the heavy display numeral (800, tabular, -0.03em) larger than its label.",
+      "**Do** keep buttons at 56px minimum height, body at 17px, and the tab bar at 72px.",
+      "**Do** flip sky text from cream to night once progress reaches 0.8."
+    ],
+    "donts": [
+      "**Don't** show progress as rings or arcs on a black screen; progress is sun height and sun shape.",
+      "**Don't** use coral or violet outside the sky, and don't use gradients that don't encode progress.",
+      "**Don't** mark a missed day in red or with a warning; it is an unlit dawn in faint.",
+      "**Don't** put shadows on neutral panels, fields, or choices.",
+      "**Don't** bring the marketing funnel's orange-to-red styles into the app; the app's warmth comes only from the sky."
+    ]
+  }
+}
