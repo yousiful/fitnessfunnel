@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ApiError, fetchMember, getToken, hasPending, readCache, saveMember, setPending, setToken, writeCache } from './api';
 import { emptyMember, type Member } from './model';
+import { demoMember, isDemo } from './demo';
 
 export type Status = 'signed-out' | 'loading' | 'ready';
 
@@ -9,9 +10,10 @@ export type Status = 'signed-out' | 'loading' | 'ready';
  * then synced to the club. Newly reached milestones come back from the server.
  */
 export function useMember() {
-  const [status, setStatus] = useState<Status>(getToken() ? 'loading' : 'signed-out');
-  const [member, setMember] = useState<Member>(() => readCache() || emptyMember());
-  const [email, setEmail] = useState('');
+  const demo = isDemo();
+  const [status, setStatus] = useState<Status>(demo ? 'ready' : getToken() ? 'loading' : 'signed-out');
+  const [member, setMember] = useState<Member>(() => (demo ? demoMember() : readCache() || emptyMember()));
+  const [email, setEmail] = useState(demo ? 'preview@theinternethealthclub.com' : '');
   const [celebrate, setCelebrate] = useState<{ key: string; label: string }[]>([]);
   const saving = useRef<Promise<void> | null>(null);
   const latest = useRef(member);
@@ -62,7 +64,7 @@ export function useMember() {
     }
   }, [push, signOut]);
 
-  useEffect(() => { if (getToken()) load(); }, [load]);
+  useEffect(() => { if (!demo && getToken()) load(); }, [load, demo]);
 
   useEffect(() => {
     const online = () => { if (hasPending()) push(); };
@@ -71,6 +73,7 @@ export function useMember() {
   }, [push]);
 
   const update = useCallback((fn: (m: Member) => Member) => {
+    if (demo) { setMember((cur) => fn(cur)); return; } // preview: memory only
     setMember((cur) => {
       const next = fn(cur);
       latest.current = next;
@@ -79,11 +82,11 @@ export function useMember() {
       return next;
     });
     queueMicrotask(() => push());
-  }, [push]);
+  }, [push, demo]);
 
   const signedIn = useCallback((token: string) => {
     setToken(token); setStatus('loading'); load();
   }, [load]);
 
-  return { status, member, email, update, signOut, signedIn, celebrate, clearCelebrate: () => setCelebrate([]) };
+  return { demo, status, member, email, update, signOut, signedIn, celebrate, clearCelebrate: () => setCelebrate([]) };
 }

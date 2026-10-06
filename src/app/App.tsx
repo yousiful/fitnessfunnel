@@ -15,7 +15,7 @@ import { Me } from './screens/Me';
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
 
 export default function App() {
-  const { status, member, email, update, signOut, signedIn, celebrate, clearCelebrate } = useMember();
+  const { demo, status, member, email, update, signOut, signedIn, celebrate, clearCelebrate } = useMember();
   const [tab, setTab] = useState<Tab>('today');
   const [playing, setPlaying] = useState<{ workout: Workout; low: boolean } | null>(null);
   // After a workout, Today replays the climb from where the sun was.
@@ -61,8 +61,13 @@ export default function App() {
       )}
       {tab === 'workouts' && <Workouts member={member} onStart={start} />}
       {tab === 'progress' && <Progress member={member} />}
-      {tab === 'me' && <Me member={member} email={email} onSignOut={signOut} onSave={(profile) => update((m) => ({ ...m, profile }))} />}
+      {tab === 'me' && <Me member={member} email={email} onSignOut={demo ? () => { window.location.href = '/app/'; } : signOut} onSave={(profile) => update((m) => ({ ...m, profile }))} />}
       <TabBar tab={tab} onTab={setTab} />
+      {demo && (
+        <p className="fixed top-[max(10px,env(safe-area-inset-top))] left-1/2 -translate-x-1/2 z-30 chip !bg-[rgba(18,15,46,0.8)] !text-[var(--cream)] backdrop-blur" role="status">
+          Preview with sample data · nothing is saved
+        </p>
+      )}
 
       {playing && (
         <Player
