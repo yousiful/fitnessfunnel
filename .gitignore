@@ -23,3 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Local Netlify folder
+.netlify
+
+# Impeccable review captures and decision mocks (local only)
+.impeccable/review/
+.impeccable/mocks/

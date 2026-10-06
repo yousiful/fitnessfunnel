@@ -23,6 +23,7 @@ import {
   Gift,
   Sparkles,
   LogIn,
+  Smartphone,
   ChevronDown,
   ChevronUp,
   HelpCircle
@@ -176,6 +177,14 @@ function App() {
               </div>
             </div>
             <div className="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
+              <a
+                href="/app/"
+                aria-label="Open the Health Club app to track workouts and progress"
+                className="hidden sm:flex items-center text-white font-bold text-xs sm:text-sm px-3 sm:px-4 py-2.5 rounded-full bg-[#16123A] hover:bg-[#2A2050] transition-all duration-300 whitespace-nowrap"
+              >
+                <Smartphone className="h-4 w-4 mr-1.5" />
+                Member App
+              </a>
               <a
                 href={MEMBERS_LOGIN_URL}
                 target="_blank"
@@ -1014,6 +1023,13 @@ function App() {
               >
                 <LogIn className="h-4 w-4 mr-2" />
                 Already a member? Log in to the Health Club
+              </a>
+              <a
+                href="/app/"
+                className="inline-flex items-center mt-3 sm:mt-0 sm:ml-3 text-white font-semibold text-sm px-5 py-2.5 rounded-full bg-[#16123A] hover:bg-[#2A2050] border-2 border-[#3B2A6B] transition-all duration-300"
+              >
+                <Smartphone className="h-4 w-4 mr-2" />
+                Track your workouts in the Health Club app
               </a>
             </div>
             <div className="flex items-center justify-center space-x-4 mb-4 text-sm text-gray-500">

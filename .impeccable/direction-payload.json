@@ -1,0 +1,78 @@
+{
+  "title": "Choose the look for the Health Club app",
+  "question": "The roll assigned Sunrise. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Sunrise",
+      "kicker": "THE ROLL",
+      "lineage": "the morning sky over a horizon line, the daily ritual every member already lives",
+      "thesis": "Every day starts as a dawn. Finishing today's plan literally raises the sun and warms the whole app.",
+      "palette": ["#16123A", "#3B2A6B", "#FF6B4A", "#FFB23F", "#FFF3E2"],
+      "materials": ["sky gradient that shifts with today's progress", "a single horizon line", "bold rounded display numerals"],
+      "viewport": "Today screen: greeting and streak at top, a big horizon arc where today's sun sits at the height of your progress, the next workout as one large start button, tab bar for Today, Workouts, Progress, Me.",
+      "risk": "Sky gradients can turn into wallpaper; the sun has to be the data, never decoration.",
+      "raised": [
+        {"from": "challenger-ticket-wallet", "raise": "Finished workouts stamp onto the week and never disappear; a missed day stays as a calm unlit dawn, never a red X."},
+        {"from": "challenger-emission-line", "raise": "Every state reads by shape as well as colour: lit, half-lit and unlit suns, so colour-blind members lose nothing."},
+        {"from": "challenger-labanotation", "raise": "In the workout player each move's bar is exactly as long as its seconds, so you see how much is left at a glance."}
+      ],
+      "board": "",
+      "hero": ""
+    },
+    {
+      "id": "model-pick",
+      "label": "Fridge Calendar",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "the paper month calendar on the fridge with gold star stickers",
+      "thesis": "Every workout earns a gold star on a month grid everyone in the family recognizes.",
+      "palette": ["#FFFFFF", "#1E2A44", "#F2B705", "#E4572E", "#3FA34D"],
+      "materials": ["paper grid", "foil star stickers", "fridge magnets"],
+      "viewport": "Today screen led by this month's calendar filling with gold stars, today's workout pinned like a magnet note.",
+      "risk": "The most familiar idea on my list; warm and clear, but less of the 'dope and impressive' you asked for."
+    },
+    {
+      "id": "challenger-transit",
+      "label": "Goal Lines",
+      "verdict": "competitive",
+      "lineage": "a metro map on midnight-blue enamel",
+      "thesis": "Your four goals are four coloured lines; every workout is a station on the way to your goal.",
+      "palette": ["#0F1B3D", "#F2F2EE", "#E5383B", "#2E6FE0", "#F4A51C", "#2BA84A"],
+      "materials": ["enamel ground", "porcelain station ticks"],
+      "viewport": "Your line drawn across the screen, the next station lit, your goal as the terminus.",
+      "case": "Fuses cleanly: goals map to lines and workouts to stations. Strong on clarity, weaker on identification for older members who never ride a metro.",
+      "risk": "Reads abstract to members who think in pounds and minutes, not routes.",
+      "hero": "https://impeccable.style/worlds/cards/wayfinding-cartography-signage-midnight-transit-diagram-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/wayfinding-cartography-signage-midnight-transit-diagram.webp"
+    },
+    {
+      "id": "challenger-streaming",
+      "label": "Streaming Wall",
+      "verdict": "competitive",
+      "lineage": "the streaming app home screen",
+      "thesis": "Workouts browse like shows: rows by goal, the focused one grows and tells you what it is.",
+      "palette": ["#101114", "#FFFFFF", "#FF5A3C"],
+      "materials": ["full-bleed artwork tiles", "dimming rows"],
+      "viewport": "Continue-watching row with today's workout, then rows per goal.",
+      "case": "Everyone of every age knows this layout, so identification is high; but tracking progress gets pushed behind browsing.",
+      "risk": "Makes it feel like a video library instead of a coach and a plan.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-streaming-title-card-wall-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/pop-culture-shelf-streaming-title-card-wall.webp"
+    },
+    {"id": "challenger-ticket-wallet", "label": "Ticket Wallet", "verdict": "declined", "lineage": "jet-age airline ticket wallet", "palette": ["#1B2A52", "#D7263D", "#FFFFFF"], "materials": ["carbon coupons"], "case": "Workouts as coupons is cute but members do not think of exercise as travel.", "kept": "Nothing disappears, it stamps: finished workouts stay stamped on the week.", "hero": "https://impeccable.style/worlds/cards/vernacular-ephemera-jet-age-ticket-wallet-hero.webp"},
+    {"id": "challenger-emission-line", "label": "Emission Lines", "verdict": "declined", "lineage": "spectrogram plate", "palette": ["#1C1C1E", "#E8E1D2", "#FFD60A"], "materials": ["charcoal continuum", "hairlines"], "case": "Too cold and technical for grandparents and beginners.", "kept": "State carried by shape, not only colour.", "hero": "https://impeccable.style/worlds/cards/operate-c-emission-line-rail-hero.webp"},
+    {"id": "challenger-labanotation", "label": "Dance Score", "verdict": "declined", "lineage": "Labanotation movement score", "palette": ["#FFFFFF", "#000000"], "materials": ["score paper"], "case": "Accurate to movement but unreadable without training.", "kept": "Length equals duration in the workout timer.", "hero": "https://impeccable.style/worlds/cards/notation-diagram-systems-labanotation-hero.webp"},
+    {"id": "challenger-crouwel", "label": "Grid Specimen", "verdict": "declined", "lineage": "Wim Crouwel grid type", "palette": ["#FFFFFF", "#1A1AFF"], "materials": ["visible grid"], "case": "A designer's world, not a member's.", "kept": "Monumental numerals for the stats that matter.", "hero": "https://impeccable.style/worlds/cards/crouwel-grid-specimen-hero.webp"}
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "A clean fitness tracker: activity rings, cards, a tab bar, done impeccably.",
+    "palette": ["#000000", "#FFFFFF", "#FA114F", "#A6FF00", "#00F0FF"],
+    "materials": ["dark ground", "neon rings"],
+    "viewport": "Rings up top, today's stats below, workout cards in a list.",
+    "risk": "Looks like every fitness app by design."
+  },
+  "steer": true
+}

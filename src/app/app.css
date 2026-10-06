@@ -1,0 +1,127 @@
+@import '@fontsource-variable/bricolage-grotesque';
+@import '@fontsource-variable/figtree';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sunrise: the sky above the horizon is today's progress; the ground below holds the work. */
+:root {
+  --night: #16123A;
+  --dusk: #3B2A6B;
+  --plum: #6B3A6E;
+  --coral: #FF6B4A;
+  --sun: #FFB23F;
+  --cream: #FFF3E2;
+  --ground: #120F2E;
+  --ground-2: #1B1742;
+  --ground-3: #26205A;
+  --line: rgba(255, 243, 226, 0.14);
+  --line-strong: rgba(255, 243, 226, 0.28);
+  --muted: #C9BFD9;
+  --faint: #9D93B5;
+  --ok: #7BE0A8;
+  --display: 'Bricolage Grotesque Variable', 'Figtree Variable', system-ui, sans-serif;
+  --ui: 'Figtree Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --tabbar-h: 72px;
+  color-scheme: dark;
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--cream);
+  font-family: var(--ui);
+  font-size: 17px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+::selection { background: var(--sun); color: var(--night); }
+:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 10px; }
+input { caret-color: var(--sun); }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--ground-3); border-radius: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+.display { font-family: var(--display); font-optical-sizing: auto; letter-spacing: -0.02em; }
+.num { font-family: var(--display); font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }
+
+/* Controls */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 56px; padding: 0 24px; border-radius: 18px; border: 0;
+  font: 700 18px/1 var(--ui); cursor: pointer; text-decoration: none;
+  transition: transform 160ms var(--ease-out), background-color 160ms, opacity 160ms, box-shadow 160ms;
+}
+.btn:active { transform: scale(0.97); }
+.btn:disabled { opacity: 0.5; cursor: default; transform: none; }
+.btn-sun { background: var(--sun); color: var(--night); box-shadow: 0 10px 28px -12px rgba(255, 178, 63, 0.7); }
+.btn-sun:hover { background: #FFC25F; }
+.btn-sun:disabled { background: var(--ground-3); color: var(--faint); box-shadow: none; opacity: 1; }
+.btn-raised { background: var(--ground-3); color: var(--cream); }
+.btn-raised:hover { background: #312A6A; }
+
+.switch { position: relative; width: 56px; height: 32px; border-radius: 999px; border: 1.5px solid var(--line-strong); cursor: pointer; flex-shrink: 0; background: var(--ground); transition: background-color 200ms, border-color 200ms; }
+.switch[aria-checked='true'] { border-color: var(--sun); }
+.switch::after { content: ''; position: absolute; top: 2.5px; left: 2.5px; width: 24px; height: 24px; border-radius: 50%; background: var(--cream); transition: transform 220ms var(--ease-out); }
+.switch[aria-checked='true'] { background: var(--sun); }
+.switch[aria-checked='true']::after { transform: translateX(24px); background: var(--night); }
+.btn-ghost { background: transparent; color: var(--cream); border: 1.5px solid var(--line-strong); }
+.btn-ghost:hover { border-color: var(--cream); }
+.btn-quiet { background: var(--ground-2); color: var(--cream); }
+.btn-quiet:hover { background: var(--ground-3); }
+
+.field {
+  width: 100%; min-height: 58px; padding: 0 18px; border-radius: 16px;
+  background: var(--ground-2); color: var(--cream); border: 1.5px solid var(--line);
+  font: 600 19px var(--ui); transition: border-color 160ms;
+}
+.field::placeholder { color: var(--faint); font-weight: 500; }
+.field:focus { outline: none; border-color: var(--sun); }
+
+.chip {
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px;
+  background: var(--ground-2); color: var(--muted); font-weight: 600; font-size: 15px; border: 1px solid var(--line);
+}
+
+.panel { background: var(--ground-2); border: 1px solid var(--line); border-radius: 22px; }
+.hairline { height: 1px; background: var(--line-strong); }
+
+.choice {
+  width: 100%; text-align: left; padding: 18px 20px; border-radius: 20px; cursor: pointer;
+  background: var(--ground-2); color: var(--cream); border: 1.5px solid var(--line);
+  transition: border-color 160ms, background-color 160ms, transform 160ms var(--ease-out);
+}
+.choice:active { transform: scale(0.985); }
+.choice[aria-pressed='true'] { border-color: var(--sun); background: #2A2050; }
+
+.tabbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+  height: calc(var(--tabbar-h) + env(safe-area-inset-bottom)); padding-bottom: env(safe-area-inset-bottom);
+  background: rgba(18, 15, 46, 0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--line);
+}
+
+.screen { min-height: 100%; padding-bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom) + 24px); }
+
+@keyframes rise-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.rise-in { animation: rise-in 520ms var(--ease-out) both; }
+
+/* The week stamp: today's sun lands on the strip once a workout is saved. */
+@keyframes stamp {
+  0% { transform: scale(1.6); opacity: 0; filter: blur(4px); }
+  55% { transform: scale(0.9); opacity: 1; filter: blur(0); }
+  100% { transform: scale(1); }
+}
+.stamp { display: inline-block; animation: stamp 700ms var(--ease-out) 1500ms both; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; }
+}
+
+/* Keeps a step's main action on screen above long option lists. */
+.sticky-action { position: sticky; bottom: 0; margin: 0 -24px; padding: 16px 24px max(16px, env(safe-area-inset-bottom)); background: linear-gradient(180deg, rgba(18,15,46,0) 0%, var(--ground) 30%); }

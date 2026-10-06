@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Member app: client-side screens all load the app shell.
+[[redirects]]
+  from = "/app/*"
+  to = "/app/index.html"
+  status = 200
