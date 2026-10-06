@@ -64,7 +64,7 @@ export default function App() {
       {tab === 'me' && <Me member={member} email={email} onSignOut={demo ? () => { window.location.href = '/app/'; } : signOut} onSave={(profile) => update((m) => ({ ...m, profile }))} />}
       <TabBar tab={tab} onTab={setTab} />
       {demo && (
-        <p className="fixed top-[max(10px,env(safe-area-inset-top))] left-1/2 -translate-x-1/2 z-30 chip !bg-[rgba(18,15,46,0.8)] !text-[var(--cream)] backdrop-blur" role="status">
+        <p className="fixed left-1/2 -translate-x-1/2 z-30 chip !py-1.5 !text-[13px] whitespace-nowrap !bg-[rgba(38,32,90,0.95)] !text-[var(--cream)]" style={{ bottom: 'calc(var(--tabbar-h) + env(safe-area-inset-bottom) + 8px)' }} role="status">
           Preview with sample data · nothing is saved
         </p>
       )}
