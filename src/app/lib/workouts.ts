@@ -3,7 +3,8 @@ import type { Goal, Level } from './model';
 // No-equipment home workouts for the club's four goals. Every move carries a low-impact version
 // (shown automatically for beginners and the Heal & Recover goal, and on request for everyone).
 
-export interface Exercise { id: string; name: string; cue: string; low?: { name: string; cue: string } }
+/** demo: key into DEMOS (lib/moves.ts); the low-impact version uses `${id}_low` when one exists. */
+export interface Exercise { id: string; name: string; cue: string; demo?: string; low?: { name: string; cue: string } }
 
 const X: Record<string, Exercise> = {
   march: { id: 'march', name: 'March in place', cue: 'Lift your knees to a comfortable height and swing your arms. Breathe easy.' },
@@ -83,7 +84,7 @@ export interface Step { kind: 'work' | 'rest'; seconds: number; exercise: Exerci
 export function buildSteps(w: Workout, level: Level, lowImpact: boolean): Step[] {
   const pick = (id: string): Exercise => {
     const e = X[id];
-    return lowImpact && e.low ? { id: e.id, name: e.low.name, cue: e.low.cue } : e;
+    return lowImpact && e.low ? { id: e.id, name: e.low.name, cue: e.low.cue, demo: `${e.id}_low` } : { ...e, demo: e.id };
   };
   const t = TIMING[level];
   const steps: Step[] = WARMUP.map((id) => ({ kind: 'work', seconds: 30, exercise: pick(id), phase: 'Warm up' }));

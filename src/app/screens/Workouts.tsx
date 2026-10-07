@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { MoveDemo } from '../components/MoveDemo';
+import { VideoLink } from '../components/VideoLink';
 import { ChevronRight, X } from 'lucide-react';
 import { todayProgress, type Goal, type Level, type Member } from '../lib/model';
 import { SkyBand } from '../components/Sky';
@@ -84,9 +86,13 @@ function Preview({ workout, level, defaultLow, onClose, onStart }: { workout: Wo
         <ol className="mt-5">
           <li className="py-2 font-semibold" style={{ color: 'var(--faint)' }}>2 min warm up</li>
           {moves.map((s, i) => (
-            <li key={s.exercise.id + i} className="py-3 border-t" style={{ borderColor: 'var(--line)' }}>
-              <span className="block font-bold text-[18px]">{s.exercise.name}</span>
-              <span className="block text-[15px] mt-0.5" style={{ color: 'var(--muted)' }}>{s.exercise.cue}</span>
+            <li key={s.exercise.id + i} className="py-3 border-t flex gap-3 items-start" style={{ borderColor: 'var(--line)' }}>
+              <MoveDemo demo={s.exercise.demo || s.exercise.id} size={72} className="shrink-0 rounded-xl" />
+              <span className="min-w-0">
+                <span className="block font-bold text-[18px]">{s.exercise.name}</span>
+                <span className="block text-[15px] mt-0.5" style={{ color: 'var(--muted)' }}>{s.exercise.cue}</span>
+                <VideoLink name={s.exercise.name} />
+              </span>
             </li>
           ))}
           <li className="py-2 border-t font-semibold" style={{ borderColor: 'var(--line)', color: 'var(--faint)' }}>1.5 min cool down</li>

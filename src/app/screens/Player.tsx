@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Pause, Play, SkipBack, SkipForward, X } from 'lucide-react';
 import { Sky } from '../components/Sky';
+import { MoveDemo } from '../components/MoveDemo';
+import { VideoLink } from '../components/VideoLink';
 import type { Level } from '../lib/model';
 import { buildSteps, totalSeconds, type Workout } from '../lib/workouts';
 
@@ -133,15 +135,23 @@ export function Player({ workout, level, lowImpact, minutesBefore, target, onFin
         {step.kind === 'rest' ? (
           <>
             <h2 className="display text-[38px] leading-[1.02] font-extrabold">Rest and breathe</h2>
-            <p className="num font-extrabold leading-none mt-3 text-[120px]" style={{ color: 'var(--muted)' }}>{left}</p>
-            <p className="mt-4 text-[20px] font-bold">{step.exercise.name} is next.</p>
+            <div className="mt-2 flex items-center justify-between gap-2">
+              <p className="num font-extrabold leading-none text-[104px]" style={{ color: 'var(--muted)' }}>{left}</p>
+              <MoveDemo demo={step.exercise.demo || step.exercise.id} size={150} className="shrink-0 opacity-80" />
+            </div>
+            <p className="mt-3 text-[20px] font-bold">{step.exercise.name} is next.</p>
             <p className="mt-1 text-[17px]" style={{ color: 'var(--muted)' }}>{step.exercise.cue}</p>
+            <VideoLink name={step.exercise.name} onOpen={() => setRunning(false)} />
           </>
         ) : (
           <>
             <h2 className="display text-[38px] leading-[1.02] font-extrabold">{step.exercise.name}</h2>
-            <p className="num font-extrabold leading-none mt-3 text-[132px]" style={{ color: left <= 3 ? 'var(--sun)' : 'var(--cream)' }}>{left}</p>
-            <p className="mt-4 text-[18px] leading-snug">{step.exercise.cue}</p>
+            <div className="mt-2 flex items-center justify-between gap-2">
+              <p className="num font-extrabold leading-none text-[112px]" style={{ color: left <= 3 ? 'var(--sun)' : 'var(--cream)' }}>{left}</p>
+              <MoveDemo demo={step.exercise.demo || step.exercise.id} size={170} playing={running} className="shrink-0" />
+            </div>
+            <p className="mt-3 text-[18px] leading-snug">{step.exercise.cue}</p>
+            <VideoLink name={step.exercise.name} onOpen={() => setRunning(false)} />
           </>
         )}
       </section>
