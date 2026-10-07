@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { ApiError, fetchMember, getToken, hasPending, readCache, saveMember, setPending, setToken, writeCache } from './api';
+import { ApiError, fetchMember, getToken, hasPending, readCache, saveMember, setPending, setToken, startDevice, writeCache } from './api';
 import { emptyMember, type Member } from './model';
 import { demoMember, isDemo } from './demo';
 
-export type Status = 'signed-out' | 'loading' | 'ready';
+export type Status = 'loading' | 'ready';
 
 /**
  * The member record, saved on the phone first so the app works offline and feels instant,
@@ -11,7 +11,7 @@ export type Status = 'signed-out' | 'loading' | 'ready';
  */
 export function useMember() {
   const demo = isDemo();
-  const [status, setStatus] = useState<Status>(demo ? 'ready' : getToken() ? 'loading' : 'signed-out');
+  const [status, setStatus] = useState<Status>(demo ? 'ready' : 'loading');
   const [member, setMember] = useState<Member>(() => (demo ? demoMember() : readCache() || emptyMember()));
   const [email, setEmail] = useState(demo ? 'preview@theinternethealthclub.com' : '');
   const [celebrate, setCelebrate] = useState<{ key: string; label: string }[]>([]);
@@ -19,9 +19,14 @@ export function useMember() {
   const latest = useRef(member);
   latest.current = member;
 
+  // The token can go bad (e.g. the server secret changes): get a fresh one for this device.
+  // The device id stays the same, so the member's record comes back with it.
+  const reconnect = useRef<() => void>(() => {});
+  const retried = useRef(false);
   const signOut = useCallback(() => {
-    setToken(null); writeCache(null); setPending(false);
-    setMember(emptyMember()); setStatus('signed-out');
+    setToken(null);
+    if (retried.current) { setStatus('ready'); return; } // don't loop if the server keeps refusing
+    retried.current = true; reconnect.current();
   }, []);
 
   const push = useCallback(async () => {
@@ -32,7 +37,7 @@ export function useMember() {
         setPending(false);
         // Keep anything recorded while the request was in flight.
         setMember((cur) => {
-          const merged = { ...res.member, profile: cur.profile, workouts: cur.workouts, weights: cur.weights };
+          const merged = { ...res.member, profile: cur.profile, workouts: cur.workouts, weights: cur.weights, contact: res.member.contact || cur.contact };
           writeCache(merged);
           return merged;
         });
@@ -64,7 +69,16 @@ export function useMember() {
     }
   }, [push, signOut]);
 
-  useEffect(() => { if (!demo && getToken()) load(); }, [load, demo]);
+  const connect = useCallback(async () => {
+    if (!getToken()) {
+      try { setToken((await startDevice()).token); }
+      catch { setStatus('ready'); return; } // offline on first open: run locally, sync later
+    }
+    load();
+  }, [load]);
+  reconnect.current = connect;
+
+  useEffect(() => { if (!demo) connect(); }, [connect, demo]);
 
   useEffect(() => {
     const online = () => { if (hasPending()) push(); };
@@ -84,9 +98,11 @@ export function useMember() {
     queueMicrotask(() => push());
   }, [push, demo]);
 
-  const signedIn = useCallback((token: string) => {
-    setToken(token); setStatus('loading'); load();
-  }, [load]);
+  /** After the member shares their details: show them right away; the server already has them. */
+  const linked = useCallback((contact: NonNullable<Member['contact']>) => {
+    setEmail(contact.email);
+    setMember((cur) => { const next = { ...cur, contact }; writeCache(next); return next; });
+  }, []);
 
-  return { demo, status, member, email, update, signOut, signedIn, celebrate, clearCelebrate: () => setCelebrate([]) };
+  return { demo, status, member, email, update, linked, celebrate, clearCelebrate: () => setCelebrate([]) };
 }

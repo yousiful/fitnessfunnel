@@ -4,7 +4,8 @@ import { TabBar, Toast, type Tab } from './components/Bits';
 import { useMember } from './lib/useMember';
 import { dailyTargetMinutes, dayKey, minutesOn } from './lib/model';
 import type { Workout } from './lib/workouts';
-import { SignIn } from './screens/SignIn';
+import { ContactSheet } from './screens/ContactSheet';
+import { addUsedSeconds, usedSeconds } from './lib/api';
 import { Onboarding } from './screens/Onboarding';
 import { Today } from './screens/Today';
 import { Workouts } from './screens/Workouts';
@@ -12,10 +13,24 @@ import { Player } from './screens/Player';
 import { Progress } from './screens/Progress';
 import { Me } from './screens/Me';
 
+const ASK_AFTER_SECONDS = 180;
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
 
 export default function App() {
-  const { demo, status, member, email, update, signOut, signedIn, celebrate, clearCelebrate } = useMember();
+  const { demo, status, member, email, update, linked, celebrate, clearCelebrate } = useMember();
+  const [askContact, setAskContact] = useState(false);
+  const [askedThisVisit, setAskedThisVisit] = useState(false);
+
+  // Count time on screen; after 3 minutes of use, ask once per visit until they share their details.
+  useEffect(() => {
+    if (demo || member.contact || askedThisVisit) return;
+    const t = setInterval(() => {
+      if (document.visibilityState !== 'visible') return;
+      addUsedSeconds(5);
+      if (usedSeconds() >= ASK_AFTER_SECONDS) { setAskContact(true); setAskedThisVisit(true); }
+    }, 5000);
+    return () => clearInterval(t);
+  }, [demo, member.contact, askedThisVisit]);
   const [tab, setTab] = useState<Tab>('today');
   const [playing, setPlaying] = useState<{ workout: Workout; low: boolean } | null>(null);
   // After a workout, Today replays the climb from where the sun was.
@@ -29,7 +44,6 @@ export default function App() {
     return () => clearTimeout(t);
   }, [celebrate, clearCelebrate]);
 
-  if (status === 'signed-out') return <SignIn onSignedIn={signedIn} />;
   if (status === 'loading') {
     return (
       <Sky progress={0.3} height="100vh">
@@ -61,7 +75,7 @@ export default function App() {
       )}
       {tab === 'workouts' && <Workouts member={member} onStart={start} />}
       {tab === 'progress' && <Progress member={member} />}
-      {tab === 'me' && <Me member={member} email={email} onSignOut={demo ? () => { window.location.href = '/app/'; } : signOut} onSave={(profile) => update((m) => ({ ...m, profile }))} />}
+      {tab === 'me' && <Me member={member} email={email} onShareDetails={demo || member.contact ? undefined : () => setAskContact(true)} onSave={(profile) => update((m) => ({ ...m, profile }))} />}
       <TabBar tab={tab} onTab={setTab} />
       {demo && (
         <p className="fixed left-1/2 -translate-x-1/2 z-30 chip !py-1.5 !text-[13px] whitespace-nowrap !bg-[rgba(38,32,90,0.95)] !text-[var(--cream)]" style={{ bottom: 'calc(var(--tabbar-h) + env(safe-area-inset-bottom) + 8px)' }} role="status">
@@ -86,6 +100,14 @@ export default function App() {
             setPlaying(null);
             setTab('today');
           }}
+        />
+      )}
+
+      {askContact && !playing && (
+        <ContactSheet
+          initialName={p.name}
+          onClose={() => setAskContact(false)}
+          onSaved={(c) => { linked(c); setAskContact(false); }}
         />
       )}
 

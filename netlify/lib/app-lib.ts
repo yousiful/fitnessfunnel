@@ -4,7 +4,7 @@ import type { HandlerEvent } from '@netlify/functions';
 
 // Shared helpers for the Health Club member app (/app).
 // Env: GHL_PIT + GHL_LOCATION_ID (The Internet Health Club location), APP_SESSION_SECRET.
-// APP_DEV=1 (local `netlify dev` only) skips every GHL call and returns the login code in the response.
+// APP_DEV=1 (local `netlify dev` only) skips every GHL call.
 
 const GHL = 'https://services.leadconnectorhq.com';
 export const DEV = process.env.APP_DEV === '1';
@@ -34,13 +34,13 @@ function secret() {
 }
 
 export const hashKey = (v: string) => createHash('sha256').update(v).digest('hex').slice(0, 40);
-export const hashCode = (email: string, code: string) => createHmac('sha256', secret()).update(`${email}:${code}`).digest('hex');
 
 const b64url = (s: string) => Buffer.from(s).toString('base64url');
 
+/** cid is the member's storage key: a device id ("d_...") or, for early email sign-ins, their GHL contact id. */
 export interface Session { cid: string; email: string; exp: number }
 
-export function signSession(cid: string, email: string, days = 60): string {
+export function signSession(cid: string, email: string, days = 365): string {
   const payload = b64url(JSON.stringify({ cid, email, exp: Date.now() + days * 864e5 }));
   const sig = createHmac('sha256', secret()).update(payload).digest('base64url');
   return `${payload}.${sig}`;
@@ -78,31 +78,21 @@ async function ghl(path: string, init: RequestInit = {}) {
   return body;
 }
 
-/** Find the member's existing GHL contact by email, or create one tagged as an app sign-up. */
-export async function findOrCreateContact(email: string): Promise<{ id: string; firstName?: string; isNew: boolean }> {
-  if (DEV) return { id: 'dev-' + hashKey(email).slice(0, 12), isNew: false };
-  const loc = process.env.GHL_LOCATION_ID!;
-  const found = await ghl(`/contacts/search/duplicate?locationId=${loc}&email=${encodeURIComponent(email)}`);
-  if (found?.contact?.id) return { id: found.contact.id, firstName: found.contact.firstName, isNew: false };
-  const created = await ghl('/contacts/', {
-    method: 'POST',
-    body: JSON.stringify({ locationId: loc, email, source: 'Health Club App', tags: ['ihc app: joined'] }),
-  });
-  return { id: created.contact.id, isNew: true };
-}
+export const clientIp = (event: HandlerEvent) =>
+  String(event.headers['x-nf-client-connection-ip'] || (event.headers['x-forwarded-for'] || '').split(',')[0] || '').trim().slice(0, 64);
 
-export async function sendCodeEmail(contactId: string, code: string) {
-  if (DEV) return;
-  const html = `
-  <div style="font-family:Arial,sans-serif;max-width:480px;margin:0 auto;padding:24px;color:#16123A">
-    <p style="font-size:16px;margin:0 0 12px">Here's your sign-in code for the Health Club app:</p>
-    <p style="font-size:40px;font-weight:800;letter-spacing:8px;margin:8px 0 16px">${code}</p>
-    <p style="font-size:14px;color:#555;margin:0">It works for 10 minutes. If you didn't ask for it, you can ignore this email.</p>
-  </div>`;
-  await ghl('/conversations/messages', {
+/** Find the member's GHL contact by email (filling in name/phone), or create one tagged as an app sign-up. */
+export async function upsertContact(info: { email: string; firstName: string; phone: string }): Promise<string> {
+  if (DEV) return 'dev-' + hashKey(info.email).slice(0, 12);
+  const loc = process.env.GHL_LOCATION_ID!;
+  const res = await ghl('/contacts/upsert', {
     method: 'POST',
-    body: JSON.stringify({ type: 'Email', contactId, subject: `${code} is your Health Club sign-in code`, html }),
+    body: JSON.stringify({
+      locationId: loc, email: info.email, firstName: info.firstName || undefined, phone: info.phone || undefined,
+      source: 'Health Club App', tags: ['ihc app: joined'],
+    }),
   });
+  return res.contact.id;
 }
 
 /** Adds tags and a note to the member's contact so the coaching team sees app milestones. */

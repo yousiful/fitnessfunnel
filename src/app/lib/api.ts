@@ -32,11 +32,29 @@ async function call<T>(path: string, init: RequestInit = {}): Promise<T> {
   return body as T;
 }
 
-export const startSignIn = (email: string) =>
-  call<{ ok: true; devCode?: string }>('app-auth-start', { method: 'POST', body: JSON.stringify({ email }) });
+const DEVICE_KEY = 'ihc-app-device';
+const USE_KEY = 'ihc-app-seconds';
 
-export const verifyCode = (email: string, code: string) =>
-  call<{ token: string; firstName: string }>('app-auth-verify', { method: 'POST', body: JSON.stringify({ email, code }) });
+/** A random id for this phone/browser, created on first open. */
+export function deviceId(): string {
+  let id = safe(() => localStorage.getItem(DEVICE_KEY), null);
+  if (!id) {
+    id = (crypto.randomUUID?.() || Date.now().toString(36) + Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2));
+    safe(() => localStorage.setItem(DEVICE_KEY, id!), undefined);
+  }
+  return id;
+}
+
+/** Seconds the app has been open on screen on this device, across visits. */
+export const usedSeconds = () => safe(() => Number(localStorage.getItem(USE_KEY)) || 0, 0);
+export const addUsedSeconds = (n: number) => safe(() => localStorage.setItem(USE_KEY, String(usedSeconds() + n)), undefined);
+
+export const startDevice = () =>
+  call<{ token: string }>('app-device', { method: 'POST', body: JSON.stringify({ deviceId: deviceId() }) });
+
+export type ContactInfo = { firstName: string; email: string; phone: string };
+export const saveContact = (c: ContactInfo) =>
+  call<{ contact: NonNullable<Member['contact']> }>('app-contact', { method: 'POST', body: JSON.stringify(c) });
 
 export const fetchMember = () => call<{ member: Member; email: string }>('app-state');
 

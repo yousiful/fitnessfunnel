@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import { ExternalLink, LogOut, Smartphone } from 'lucide-react';
+import { ExternalLink, Smartphone, UserRound } from 'lucide-react';
 import { todayProgress, type Goal, type Level, type Member, type Profile } from '../lib/model';
 import { SkyBand } from '../components/Sky';
 import { GOAL_LABEL, LEVEL_LABEL } from '../lib/workouts';
 
 const MEMBERS_PORTAL = 'https://5ijobzm3ovbhqenhpjix.app.clientclub.net/';
 
-export function Me({ member, email, onSave, onSignOut }: { member: Member; email: string; onSave: (p: Profile) => void; onSignOut: () => void }) {
+export function Me({ member, email, onSave, onShareDetails }: { member: Member; email: string; onSave: (p: Profile) => void; onShareDetails?: () => void }) {
   const p = member.profile!;
   const [draft, setDraft] = useState(p);
   const [installPrompt, setInstallPrompt] = useState<any>(null);
@@ -72,7 +72,9 @@ export function Me({ member, email, onSave, onSignOut }: { member: Member; email
         <button className="btn btn-sun w-full mt-6" disabled={!changed || !draft.name.trim()} onClick={() => onSave(draft)}>{changed ? 'Save changes' : 'Saved'}</button>
       </section>
 
-      <button type="button" onClick={onSignOut} className="btn btn-ghost w-full mt-10"><LogOut className="w-5 h-5" aria-hidden="true" /> Sign out</button>
+      {onShareDetails && (
+        <button type="button" onClick={onShareDetails} className="btn btn-ghost w-full mt-10"><UserRound className="w-5 h-5" aria-hidden="true" /> Let your coach see your progress</button>
+      )}
       </div>
     </main>
   );

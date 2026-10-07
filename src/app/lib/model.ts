@@ -22,6 +22,8 @@ export interface Member {
   workouts: WorkoutLog[];
   weights: WeightLog[];
   milestones: Record<string, string>;
+  /** Set once the member shares their details (and is linked to a GHL contact). */
+  contact?: { ghlId: string; firstName: string; email: string; phone: string };
 }
 
 export const emptyMember = (): Member => ({ profile: null, workouts: [], weights: [], milestones: {} });

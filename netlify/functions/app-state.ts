@@ -26,13 +26,16 @@ function cleanProfile(p: any): Profile | null {
 
 export const handler: Handler = async (event) => {
   const session = readSession(event);
-  if (!session) return json(401, { error: 'Please sign in again.' });
+  if (!session) return json(401, { error: 'Please reopen the app.' });
 
   const db = store(event);
   const key = `member/${session.cid}`;
   const current = ((await db.get(key, { type: 'json' })) as Member | null) || emptyMember();
+  // Device members link to GHL once they share their details; early email sign-ins already are.
+  const ghlId = current.contact?.ghlId || (session.cid.startsWith('d_') ? '' : session.cid);
+  const email = current.contact?.email || session.email;
 
-  if (event.httpMethod === 'GET') return json(200, { member: current, email: session.email });
+  if (event.httpMethod === 'GET') return json(200, { member: current, email });
   if (event.httpMethod !== 'PUT') return json(405, { error: 'Method not allowed' });
   if ((event.body || '').length > 400_000) return json(413, { error: 'Too much data.' });
 
@@ -52,6 +55,7 @@ export const handler: Handler = async (event) => {
     .map((w: any) => ({ date: w.date, value: w.value }));
 
   const next: Member = {
+    ...current,
     profile: body.profile === undefined ? current.profile : cleanProfile(body.profile) ?? current.profile,
     workouts,
     weights,
@@ -64,11 +68,11 @@ export const handler: Handler = async (event) => {
 
   await db.setJSON(key, next);
 
-  if (reached.length) {
+  if (reached.length && ghlId) {
     const w = latestWeight(next);
     const unit = next.profile?.unit || 'lb';
     try {
-      await recordMilestones(session.cid, reached.map((m) => ({
+      await recordMilestones(ghlId, reached.map((m) => ({
         tag: m.tag,
         note: `${m.label} (${next.workouts.length} workouts total${w != null ? `, current weight ${w} ${unit}` : ''})`,
       })));
