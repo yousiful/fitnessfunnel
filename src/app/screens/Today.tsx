@@ -5,6 +5,10 @@ import { WeekStrip } from '../components/Bits';
 import { currentStreak, dailyTargetMinutes, dayKey, latestWeight, minutesOn, type Member } from '../lib/model';
 import { GOAL_LABEL, LEVEL_LABEL, todaysWorkout, workoutMinutes, type Workout } from '../lib/workouts';
 import { WeightSheet } from './WeightSheet';
+import { MoveDemo } from '../components/MoveDemo';
+import { HowToSheet } from '../components/HowToSheet';
+import { quoteOfTheDay } from '../lib/quotes';
+import { buildSteps } from '../lib/workouts';
 
 function greeting() {
   const h = new Date().getHours();
@@ -22,6 +26,9 @@ export function Today({ member, riseFrom, onStart, onLogWeight }: { member: Memb
   const mins = workoutMinutes(workout, p.level);
   const weight = latestWeight(member);
   const [weighing, setWeighing] = useState(false);
+  const [how, setHow] = useState<{ demo: string; name: string } | null>(null);
+  const low = p.level === 'beginner' || workout.goal === 'recover';
+  const moves = buildSteps(workout, p.level, low).filter((s) => s.phase === 'Workout' && s.kind === 'work' && s.round === 1).map((s) => s.exercise);
   const finished = progress >= 0.8;
 
   return (
@@ -62,6 +69,28 @@ export function Today({ member, riseFrom, onStart, onLogWeight }: { member: Memb
           </button>
         </section>
 
+        <section className="mt-6" aria-labelledby="todays-moves">
+          <h2 id="todays-moves" className="font-bold text-[18px]">Today's moves <span className="font-semibold text-[15px]" style={{ color: 'var(--muted)' }}>· tap to learn each one</span></h2>
+          <ul className="mt-3 -mx-5 px-5 flex gap-3 overflow-x-auto pb-2" style={{ scrollSnapType: 'x mandatory' }}>
+            {moves.map((e, i) => (
+              <li key={e.id + i} className="shrink-0" style={{ scrollSnapAlign: 'start' }}>
+                <button type="button" onClick={() => setHow({ demo: e.demo || e.id, name: e.name })} className="panel w-[132px] p-3 flex flex-col items-center text-center gap-1">
+                  <MoveDemo demo={e.demo || e.id} size={96} />
+                  <span className="font-bold text-[15px] leading-tight">{e.name}</span>
+                  <span className="text-[13px] font-semibold" style={{ color: 'var(--sun)' }}>How to</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="mt-4">
+          <blockquote className="panel px-5 py-4" style={{ background: 'var(--ground-2)' }}>
+            <p className="text-[18px] italic leading-snug">"{quoteOfTheDay()}"</p>
+            <footer className="mt-1 text-[13px] font-semibold" style={{ color: 'var(--faint)' }}>Today's push</footer>
+          </blockquote>
+        </section>
+
         <section className="mt-4">
           <button type="button" onClick={() => setWeighing(true)} className="w-full panel px-5 py-4 flex items-center justify-between">
             <span className="flex items-center gap-3 font-semibold"><Scale className="w-5 h-5" style={{ color: 'var(--sun)' }} aria-hidden="true" /> Log today's weight</span>
@@ -70,6 +99,7 @@ export function Today({ member, riseFrom, onStart, onLogWeight }: { member: Memb
         </section>
       </div>
 
+      {how && <HowToSheet demo={how.demo} name={how.name} onClose={() => setHow(null)} />}
       {weighing && <WeightSheet unit={p.unit} initial={weight} onClose={() => setWeighing(false)} onSave={(v) => { onLogWeight(v); setWeighing(false); }} />}
     </main>
   );

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { MoveDemo } from '../components/MoveDemo';
-import { VideoLink } from '../components/VideoLink';
+import { HowToSheet } from '../components/HowToSheet';
 import { ChevronRight, X } from 'lucide-react';
 import { todayProgress, type Goal, type Level, type Member } from '../lib/model';
 import { SkyBand } from '../components/Sky';
-import { GOAL_LABEL, LEVEL_LABEL, WORKOUTS, buildSteps, workoutMinutes, type Workout } from '../lib/workouts';
+import { EXERCISES, GOAL_LABEL, LEVEL_LABEL, WORKOUTS, buildSteps, workoutMinutes, type Workout } from '../lib/workouts';
 
 export function Workouts({ member, onStart }: { member: Member; onStart: (w: Workout, lowImpact: boolean) => void }) {
   const p = member.profile!;
@@ -41,6 +41,7 @@ export function Workouts({ member, onStart }: { member: Member; onStart: (w: Wor
         </section>
       ))}
 
+      <ExerciseGuide />
       </div>
       {open && (
         <Preview
@@ -54,6 +55,7 @@ export function Workouts({ member, onStart }: { member: Member; onStart: (w: Wor
 
 function Preview({ workout, level, defaultLow, onClose, onStart }: { workout: Workout; level: Level; defaultLow: boolean; onClose: () => void; onStart: (low: boolean) => void }) {
   const [low, setLow] = useState(defaultLow);
+  const [how, setHow] = useState<{ demo: string; name: string } | null>(null);
   const moves = buildSteps(workout, level, low).filter((s) => s.phase === 'Workout' && s.kind === 'work' && s.round === 1);
 
   useEffect(() => {
@@ -86,13 +88,15 @@ function Preview({ workout, level, defaultLow, onClose, onStart }: { workout: Wo
         <ol className="mt-5">
           <li className="py-2 font-semibold" style={{ color: 'var(--faint)' }}>2 min warm up</li>
           {moves.map((s, i) => (
-            <li key={s.exercise.id + i} className="py-3 border-t flex gap-3 items-start" style={{ borderColor: 'var(--line)' }}>
-              <MoveDemo demo={s.exercise.demo || s.exercise.id} size={72} className="shrink-0 rounded-xl" />
-              <span className="min-w-0">
-                <span className="block font-bold text-[18px]">{s.exercise.name}</span>
-                <span className="block text-[15px] mt-0.5" style={{ color: 'var(--muted)' }}>{s.exercise.cue}</span>
-                <VideoLink name={s.exercise.name} />
-              </span>
+            <li key={s.exercise.id + i} className="border-t" style={{ borderColor: 'var(--line)' }}>
+              <button type="button" onClick={() => setHow({ demo: s.exercise.demo || s.exercise.id, name: s.exercise.name })} className="w-full py-3 flex gap-3 items-start text-left">
+                <MoveDemo demo={s.exercise.demo || s.exercise.id} size={72} className="shrink-0 rounded-xl" />
+                <span className="min-w-0">
+                  <span className="block font-bold text-[18px]">{s.exercise.name}</span>
+                  <span className="block text-[15px] mt-0.5" style={{ color: 'var(--muted)' }}>{s.exercise.cue}</span>
+                  <span className="mt-1.5 inline-block text-[15px] font-semibold" style={{ color: 'var(--sun)' }}>How to do it, with video</span>
+                </span>
+              </button>
             </li>
           ))}
           <li className="py-2 border-t font-semibold" style={{ borderColor: 'var(--line)', color: 'var(--faint)' }}>1.5 min cool down</li>
@@ -100,6 +104,29 @@ function Preview({ workout, level, defaultLow, onClose, onStart }: { workout: Wo
 
         <button className="btn btn-sun w-full mt-6" onClick={() => onStart(low)}>Start workout</button>
       </div>
+      {how && <HowToSheet demo={how.demo} name={how.name} onClose={() => setHow(null)} />}
     </div>
+  );
+}
+
+/** Every move in the app, each with a video, an animated demo and steps. */
+function ExerciseGuide() {
+  const [how, setHow] = useState<{ demo: string; name: string } | null>(null);
+  return (
+    <section className="mt-10 mb-4" aria-labelledby="guide">
+      <h2 id="guide" className="display text-[24px] font-extrabold">Exercise guide</h2>
+      <p className="mt-1" style={{ color: 'var(--muted)' }}>Tap any move to see how it's done.</p>
+      <ul className="mt-4 grid grid-cols-2 gap-3">
+        {EXERCISES.map((e) => (
+          <li key={e.id}>
+            <button type="button" onClick={() => setHow({ demo: e.id, name: e.name })} className="w-full panel p-3 flex flex-col items-center text-center gap-1">
+              <MoveDemo demo={e.id} size={96} />
+              <span className="font-bold text-[15px] leading-tight">{e.name}</span>
+            </button>
+          </li>
+        ))}
+      </ul>
+      {how && <HowToSheet demo={how.demo} name={how.name} onClose={() => setHow(null)} />}
+    </section>
   );
 }

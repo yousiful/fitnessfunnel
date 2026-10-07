@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Pause, Play, SkipBack, SkipForward, X } from 'lucide-react';
+import { BookOpen, Pause, Play, SkipBack, SkipForward, X } from 'lucide-react';
 import { Sky } from '../components/Sky';
 import { MoveDemo } from '../components/MoveDemo';
-import { VideoLink } from '../components/VideoLink';
+import { HowToSheet } from '../components/HowToSheet';
+import { quoteFor } from '../lib/quotes';
 import type { Level } from '../lib/model';
 import { buildSteps, totalSeconds, type Workout } from '../lib/workouts';
 
@@ -38,6 +39,7 @@ export function Player({ workout, level, lowImpact, minutesBefore, target, onFin
   const [running, setRunning] = useState(true);
   const [confirmExit, setConfirmExit] = useState(false);
   const [done, setDone] = useState(false);
+  const [howTo, setHowTo] = useState(false);
   const lastTick = useRef<number | null>(null);
   const leftRef = useRef(left);
   leftRef.current = left;
@@ -90,6 +92,7 @@ export function Player({ workout, level, lowImpact, minutesBefore, target, onFin
         </Sky>
         <div className="flex-1 px-6 pt-8 pb-[max(28px,env(safe-area-inset-bottom))] max-w-xl mx-auto w-full flex flex-col">
           <p className="text-[20px]"><span className="num text-[40px] font-extrabold">{minutes}</span> minutes of real work. Your coach will be proud.</p>
+          <p className="mt-5 text-[18px] italic leading-snug" style={{ color: 'var(--muted)' }}>"{quoteFor(steps.length)}"</p>
           <button className="btn btn-sun w-full mt-auto" onClick={() => onFinish(minutes, true)}>Done</button>
         </div>
       </main>
@@ -141,7 +144,10 @@ export function Player({ workout, level, lowImpact, minutesBefore, target, onFin
             </div>
             <p className="mt-3 text-[20px] font-bold">{step.exercise.name} is next.</p>
             <p className="mt-1 text-[17px]" style={{ color: 'var(--muted)' }}>{step.exercise.cue}</p>
-            <VideoLink name={step.exercise.name} onOpen={() => setRunning(false)} />
+            <button type="button" onClick={() => { setRunning(false); setHowTo(true); }} className="mt-3 self-start inline-flex items-center gap-2 font-semibold text-[16px] px-4 py-2.5 rounded-full" style={{ background: 'var(--ground-2)', color: 'var(--sun)' }}>
+              <BookOpen className="w-[18px] h-[18px]" aria-hidden="true" /> How to do it (video)
+            </button>
+            <p className="mt-auto pt-5 text-[17px] italic leading-snug" style={{ color: 'var(--muted)' }}>"{quoteFor(i)}"</p>
           </>
         ) : (
           <>
@@ -151,7 +157,9 @@ export function Player({ workout, level, lowImpact, minutesBefore, target, onFin
               <MoveDemo demo={step.exercise.demo || step.exercise.id} size={170} playing={running} className="shrink-0" />
             </div>
             <p className="mt-3 text-[18px] leading-snug">{step.exercise.cue}</p>
-            <VideoLink name={step.exercise.name} onOpen={() => setRunning(false)} />
+            <button type="button" onClick={() => { setRunning(false); setHowTo(true); }} className="mt-3 self-start inline-flex items-center gap-2 font-semibold text-[16px] px-4 py-2.5 rounded-full" style={{ background: 'var(--ground-2)', color: 'var(--sun)' }}>
+              <BookOpen className="w-[18px] h-[18px]" aria-hidden="true" /> How to do it (video)
+            </button>
           </>
         )}
       </section>
@@ -167,6 +175,8 @@ export function Player({ workout, level, lowImpact, minutesBefore, target, onFin
           <SkipForward aria-hidden="true" />
         </button>
       </div>
+
+      {howTo && <HowToSheet demo={step.exercise.demo || step.exercise.id} name={step.exercise.name} onClose={() => setHowTo(false)} />}
 
       {confirmExit && (
         <div className="fixed inset-0 z-50 flex items-end justify-center" role="dialog" aria-modal="true" aria-label="End workout">

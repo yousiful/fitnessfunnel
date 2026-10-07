@@ -49,6 +49,9 @@ const X: Record<string, Exercise> = {
   breathe: { id: 'breathe', name: 'Slow breathing', cue: 'In through your nose for four, out through your mouth for six. Let your shoulders drop.' },
 };
 
+/** Every move, for the exercise guide. */
+export const EXERCISES: Exercise[] = Object.values(X);
+
 export interface Workout { id: string; goal: Goal; title: string; blurb: string; moves: string[] }
 
 const WARMUP = ['march', 'armCircles', 'hipCircles', 'torsoTwist'];
