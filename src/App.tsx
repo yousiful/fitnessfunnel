@@ -1009,7 +1009,7 @@ function App() {
               </div>
             </div>
             <p className="text-gray-400 mb-2 font-semibold">
-              The Internet Health Site � - Internet Health Club
+              The Internet Health Site® - Internet Health Club
             </p>
             <p className="text-gray-500 mb-4 text-sm">
               Step-by-step remote guidance into the path of designing your figure. Now at a mystery price.
