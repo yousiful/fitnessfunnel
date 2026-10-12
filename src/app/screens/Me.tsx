@@ -75,6 +75,11 @@ export function Me({ member, email, onSave, onShareDetails }: { member: Member; 
       {onShareDetails && (
         <button type="button" onClick={onShareDetails} className="btn btn-ghost w-full mt-10"><UserRound className="w-5 h-5" aria-hidden="true" /> Let your coach see your progress</button>
       )}
+
+      <footer className="mt-12 mb-16 flex flex-col items-center gap-2" style={{ color: 'var(--muted)' }}>
+        <img src="/brand/emblem.png" alt="" width={56} height={56} className="w-14 h-14 opacity-90" loading="lazy" />
+        <p className="text-[13px] font-semibold tracking-wide">The Internet Health Site</p>
+      </footer>
       </div>
     </main>
   );

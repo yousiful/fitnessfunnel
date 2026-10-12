@@ -1039,6 +1039,7 @@ function App() {
               <span>•</span>
               <span>{theme.emoji} {theme.headerBadge} Active</span>
             </div>
+            <img src="/brand/emblem.png" alt="The Internet Health Site emblem" width={64} height={64} className="w-16 h-16 mx-auto mb-3 opacity-90" loading="lazy" />
             <p className="text-sm text-gray-500">
               © {new Date().getFullYear()} The Internet Health Site. All rights reserved.
             </p>
