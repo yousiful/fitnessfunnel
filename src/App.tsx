@@ -46,6 +46,12 @@ function App() {
   const MEMBERS_LOGIN_URL = 'https://5ijobzm3ovbhqenhpjix.app.clientclub.net/';
 
   useEffect(() => {
+    // Meta pixel: someone opened the enrollment survey (the step before checkout)
+    const w = window as unknown as { fbq?: (...args: unknown[]) => void };
+    if (showSurvey && w.fbq) w.fbq('trackCustom', 'OpenEnrollment');
+  }, [showSurvey]);
+
+  useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(prev => prev > 0 ? prev - 1 : 0);
     }, 1000);

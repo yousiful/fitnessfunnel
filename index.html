@@ -32,6 +32,18 @@
     </script>
     <script src="https://pixel.datatagmanager.com/pixel.js?pid=0219d3e9-3cad-42f3-9bd1-111525982334"></script>
     <script id="datatagmanager-id" src="https://cdn.pixel.datatagmanager.com/pixels/0219d3e9-3cad-42f3-9bd1-111525982334/p.js" async></script>
+
+    <!-- Meta Pixel (same pixel as the go.theinternethealthclub.com checkout funnel, used by the Fitness Sales campaign) -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2394045540964924');
+    fbq('track', 'PageView');
+    if (location.pathname === '/' || location.pathname === '') fbq('track', 'ViewContent', {content_name: 'Health Club lander'});
+    </script>
   </head>
   <body>
     <div id="root"></div>
