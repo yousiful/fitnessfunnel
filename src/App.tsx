@@ -157,10 +157,6 @@ function App() {
     {
       q: "How fast will I see results?",
       a: "A lot of members feel more energy within the first couple of weeks. Visible changes usually show up in the first month once you settle into a rhythm. How fast depends on you, and your coach is there to keep you consistent."
-    },
-    {
-      q: "What if it turns out it's not for me?",
-      a: "You're covered by our 30-day guarantee. Give it an honest try, and if it's not a fit you've lost nothing. We would rather you start with zero risk."
     }
   ];
 
@@ -208,10 +204,18 @@ function App() {
             </div>
           </div>
         </div>
+        <a
+          href="/app/"
+          className="sm:hidden flex items-center justify-center gap-2 py-2 bg-[#16123A] text-white text-sm font-bold"
+        >
+          <Smartphone className="h-4 w-4" />
+          Track your workouts in the Health Club app
+          <span aria-hidden="true">→</span>
+        </a>
       </header>
 
       {/* Hero Section */}
-      <section className={`pt-20 pb-16 bg-gradient-to-br ${theme.bgLight} relative overflow-hidden`}>
+      <section className={`pt-36 sm:pt-20 pb-16 bg-gradient-to-br ${theme.bgLight} relative overflow-hidden`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           {/* Urgency Banner */}
           <div className={`bg-gradient-to-r ${theme.gradient} text-white text-center py-5 rounded-xl mb-8 animate-pulse relative overflow-hidden shadow-2xl border-4 border-yellow-400`}>
@@ -791,10 +795,6 @@ function App() {
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-2 flex-shrink-0" />
-                    <span>30-Day Transformation Guarantee</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 mr-2 flex-shrink-0" />
                     <span>Friendly community that has your back</span>
                   </div>
                 </div>
@@ -808,7 +808,7 @@ function App() {
                 
                 <div className="text-center">
                   <p className="text-sm text-white/80 mb-2">
-                    ⚡ Instant access • 💳 Secure checkout • 🔒 30-day guarantee
+                    ⚡ Instant access • 💳 Secure checkout
                   </p>
                 </div>
               </div>
@@ -825,7 +825,7 @@ function App() {
               Why People Love the Health Club
             </h3>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              It's not a fancy app or a complicated program. It's simple: a coach, a plan, and people who care. That's why it works.
+              It's not a complicated program. It's simple: a coach, a plan, and people who care. That's why it works.
             </p>
           </div>
           
@@ -858,15 +858,15 @@ function App() {
             
             <div className="text-center group cursor-pointer">
               <div className={`w-20 h-20 bg-gradient-to-r ${theme.gradient} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
-                <Shield className="h-10 w-10 group-hover:animate-pulse" />
+                <Smartphone className="h-10 w-10 group-hover:animate-pulse" />
               </div>
-              <h4 className="text-xl font-semibold mb-4 group-hover:text-green-400 transition-colors">Try It Risk-Free</h4>
+              <h4 className="text-xl font-semibold mb-4 group-hover:text-green-400 transition-colors">Track It on Your Phone</h4>
               <p className="text-gray-300 group-hover:text-white transition-colors">
-                Not sure? No problem. Try it for 30 days. If you don't like it or don't see results, you get your money back. Simple as that.
+                The Health Club app logs your workouts, streaks and weight, shows you how to do every move, and can share your progress with your coach.
               </p>
-              <div className="mt-4 text-green-400 font-semibold">
-                🛡️ 30-day money back, no questions
-              </div>
+              <a href="/app/" className="inline-block mt-4 text-green-400 font-semibold hover:text-green-300">
+                📱 Open the app
+              </a>
             </div>
           </div>
         </div>
@@ -978,10 +978,6 @@ function App() {
               <div className="flex items-center">
                 <CheckCircle className="h-4 w-4 mr-2" />
                 <span>Instant Access</span>
-              </div>
-              <div className="flex items-center">
-                <Shield className="h-4 w-4 mr-2" />
-                <span>30-Day Guarantee</span>
               </div>
               <div className="flex items-center">
                 <Gift className="h-4 w-4 mr-2" />

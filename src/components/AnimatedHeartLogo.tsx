@@ -13,14 +13,14 @@ const AnimatedHeartLogo: React.FC<AnimatedHeartLogoProps> = ({
 }) => {
   const sizeClasses = {
     sm: 'w-8 h-8',
-    md: 'w-12 h-12',
+    md: 'w-9 h-9 sm:w-12 sm:h-12',
     lg: 'w-16 h-16',
     xl: 'w-24 h-24'
   };
 
   const textSizes = {
     sm: 'text-lg',
-    md: 'text-xl',
+    md: 'text-[15px] sm:text-xl',
     lg: 'text-2xl',
     xl: 'text-3xl'
   };
@@ -66,7 +66,7 @@ const AnimatedHeartLogo: React.FC<AnimatedHeartLogoProps> = ({
 
       {/* Brand Text */}
       {showText && (
-        <div className="ml-3">
+        <div className="ml-2 sm:ml-3">
           <h1 className={`${textSizes[size]} font-bold text-gray-900 leading-tight`}>
             The Internet Health Site
           </h1>
