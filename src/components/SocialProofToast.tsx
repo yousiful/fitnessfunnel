@@ -18,7 +18,7 @@ const CITIES = [
 ];
 
 const ACTIONS = [
-  { text: 'just joined the Health Club', emoji: '🎉' },
+  { text: 'just joined the Health Site', emoji: '🎉' },
   { text: 'started their figure design plan', emoji: '💪' },
   { text: 'signed up for remote coaching', emoji: '🏋️' },
   { text: 'joined the community', emoji: '🤝' },

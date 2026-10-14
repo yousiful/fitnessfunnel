@@ -7,7 +7,7 @@ export type Status = 'loading' | 'ready';
 
 /**
  * The member record, saved on the phone first so the app works offline and feels instant,
- * then synced to the club. Newly reached milestones come back from the server.
+ * then synced to the Health Site. Newly reached milestones come back from the server.
  */
 export function useMember() {
   const demo = isDemo();

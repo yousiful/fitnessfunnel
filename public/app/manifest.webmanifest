@@ -1,7 +1,7 @@
 {
-  "name": "The Internet Health Club",
-  "short_name": "Health Club",
-  "description": "Your workouts, progress and goals with The Internet Health Club.",
+  "name": "The Internet Health Site",
+  "short_name": "Health Site",
+  "description": "Your workouts, progress and goals with The Internet Health Site.",
   "start_url": "/app/",
   "scope": "/app/",
   "display": "standalone",

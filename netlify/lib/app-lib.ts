@@ -2,8 +2,8 @@ import { createHmac, createHash, timingSafeEqual } from 'node:crypto';
 import { connectLambda, getStore } from '@netlify/blobs';
 import type { HandlerEvent } from '@netlify/functions';
 
-// Shared helpers for the Health Club member app (/app).
-// Env: GHL_PIT + GHL_LOCATION_ID (The Internet Health Club location), APP_SESSION_SECRET.
+// Shared helpers for the Health Site member app (/app).
+// Env: GHL_PIT + GHL_LOCATION_ID (GHL location "The Internet Health Site"), APP_SESSION_SECRET.
 // APP_DEV=1 (local `netlify dev` only) skips every GHL call.
 
 const GHL = 'https://services.leadconnectorhq.com';
@@ -89,7 +89,7 @@ export async function upsertContact(info: { email: string; firstName: string; ph
     method: 'POST',
     body: JSON.stringify({
       locationId: loc, email: info.email, firstName: info.firstName || undefined, phone: info.phone || undefined,
-      source: 'Health Club App', tags: ['ihc app: joined'],
+      source: 'Health Site App', tags: ['ihc app: joined'],
     }),
   });
   return res.contact.id;
@@ -102,6 +102,6 @@ export async function recordMilestones(contactId: string, items: { tag: string; 
   await ghl(`/contacts/${contactId}/tags`, { method: 'POST', body: JSON.stringify({ tags: items.map((i) => i.tag) }) });
   await ghl(`/contacts/${contactId}/notes`, {
     method: 'POST',
-    body: JSON.stringify({ body: 'Health Club app:\n' + items.map((i) => `- ${i.note}`).join('\n') }),
+    body: JSON.stringify({ body: 'Health Site app:\n' + items.map((i) => `- ${i.note}`).join('\n') }),
   });
 }

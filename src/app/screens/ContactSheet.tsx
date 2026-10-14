@@ -3,7 +3,7 @@ import { X } from 'lucide-react';
 import { saveContact, type ContactInfo } from '../lib/api';
 import type { Member } from '../lib/model';
 
-/** Asked once someone has used the app for a few minutes: who they are, so the club can cheer them on. */
+/** Asked once someone has used the app for a few minutes: who they are, so the Health Site can cheer them on. */
 export function ContactSheet({ initialName, onClose, onSaved }: {
   initialName: string; onClose: () => void; onSaved: (c: NonNullable<Member['contact']>) => void;
 }) {
@@ -36,7 +36,7 @@ export function ContactSheet({ initialName, onClose, onSaved }: {
           <h2 className="display text-[26px] leading-tight font-extrabold">Want your coach to see your progress?</h2>
           <button type="button" onClick={onClose} aria-label="Close" className="p-2 -mr-2"><X aria-hidden="true" /></button>
         </div>
-        <p className="mt-2 text-[17px]" style={{ color: 'var(--muted)' }}>Leave your details and the club can check in and celebrate your wins with you.</p>
+        <p className="mt-2 text-[17px]" style={{ color: 'var(--muted)' }}>Leave your details and your coach can check in and celebrate your wins with you.</p>
 
         <label htmlFor="c-name" className="block mt-6 mb-2 font-semibold">First name</label>
         <input id="c-name" className="field" autoComplete="given-name" required value={info.firstName} onChange={set('firstName')} />

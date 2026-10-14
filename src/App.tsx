@@ -153,8 +153,8 @@ function App() {
       a: "Most members start with just 20 to 30 minutes a few times a week. The plan fits around your life, not the other way around. You can always do more once you build momentum."
     },
     {
-      q: "What does Health Club access actually cost?",
-      a: "As a member of The Internet Health Site, you unlock Health Club access at a mystery price, one that's revealed only once you start your enrollment. What we can tell you is it's set low on purpose, because we want you to actually use it and get real results."
+      q: "What does Health Site access actually cost?",
+      a: "As a member of The Internet Health Site, you unlock Health Site access at a mystery price, one that's revealed only once you start your enrollment. What we can tell you is it's set low on purpose, because we want you to actually use it and get real results."
     },
     {
       q: "What if I have an injury or a health condition?",
@@ -181,7 +181,7 @@ function App() {
             <div className="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
               <a
                 href="/app/"
-                aria-label="Open the Health Club app to track workouts and progress"
+                aria-label="Open the Health Site app to track workouts and progress"
                 className="hidden sm:flex items-center text-white font-bold text-xs sm:text-sm px-3 sm:px-4 py-2.5 rounded-full bg-[#16123A] hover:bg-[#2A2050] transition-all duration-300 whitespace-nowrap"
               >
                 <Smartphone className="h-4 w-4 mr-1.5" />
@@ -191,7 +191,7 @@ function App() {
                 href={MEMBERS_LOGIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Member login to the Health Club members area"
+                aria-label="Member login to the Health Site members area"
                 className="flex items-center text-gray-800 hover:text-gray-900 font-bold text-xs sm:text-sm px-3 sm:px-4 py-2.5 rounded-full border-2 border-gray-300 bg-gray-50 hover:border-gray-400 hover:bg-gray-100 transition-all duration-300 whitespace-nowrap"
               >
                 <LogIn className="h-4 w-4 mr-1.5" />
@@ -215,7 +215,7 @@ function App() {
           className="sm:hidden flex items-center justify-center gap-2 py-2 bg-[#16123A] text-white text-sm font-bold"
         >
           <Smartphone className="h-4 w-4" />
-          Track your workouts in the Health Club app
+          Track your workouts in the Health Site app
           <span aria-hidden="true">→</span>
         </a>
       </header>
@@ -251,15 +251,15 @@ function App() {
               <div className="bg-gradient-to-r from-red-500 to-orange-500 h-2.5 rounded-full transition-all duration-1000" style={{ width: '88%' }} />
             </div>
             <p className="text-xs text-gray-500 mt-2 text-center">
-              88% of this month's Health Club spots have already been claimed
+              88% of this month's Health Site spots have already been claimed
             </p>
           </div>
 
           <div className="text-center">
-            {/* Internet Health Club Badge */}
+            {/* Internet Health Site Badge */}
             <div className={`inline-flex items-center bg-gradient-to-r ${theme.badgeGradient} ${theme.accentColor} px-6 py-3 rounded-full text-sm font-bold mb-6 animate-bounce shadow-lg border-2 ${theme.borderAccent}`}>
               <Heart className="h-5 w-5 mr-2" />
-              Internet Health Site Members Unlock a Mystery Price on Health Club Access!
+              Internet Health Site Members Unlock a Mystery Price on Health Site Access!
               <Sparkles className="h-5 w-5 ml-2 text-yellow-500" />
             </div>
 
@@ -271,7 +271,7 @@ function App() {
             
             <p className="text-xl md:text-2xl text-gray-700 mb-4 max-w-4xl mx-auto font-medium">
               If you're part of <span className={`${theme.accentColor} font-bold`}>The Internet Health Site</span>, great news  -
-              you can get the <span className={`${theme.accentColor} font-bold`}>Internet Health Club</span> for
+              you can get the <span className={`${theme.accentColor} font-bold`}>Internet Health Site</span> for
               <span className={`${theme.accentColor} font-bold`}>a mystery price</span> we only reveal when you unlock it. We'll walk you through
               every step of getting in shape, right from your phone or computer.
             </p>
@@ -314,7 +314,7 @@ function App() {
               </div>
             </div>
 
-            {/* Internet Health Club Value Prop */}
+            {/* Internet Health Site Value Prop */}
             <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 max-w-md mx-auto shadow-2xl border-2 border-gray-200">
               <div className="text-center">
                 <span className="text-base font-bold text-gray-800">What You Get at Our Mystery Price:</span>
@@ -415,7 +415,7 @@ function App() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-              See What the Health Club Is All About
+              See What the Health Site Is All About
             </h3>
             <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto">
               Watch how real members are changing their lives from home
@@ -462,7 +462,7 @@ function App() {
               <Users className="h-6 w-6 mr-2 group-hover:scale-110 transition-transform" />
               <div>
                 <span className="font-bold text-xl">Growing</span>
-                <span className="block text-sm text-gray-300">Health Club Members</span>
+                <span className="block text-sm text-gray-300">Health Site Members</span>
               </div>
             </div>
             <div className="flex items-center group cursor-pointer">
@@ -707,7 +707,7 @@ function App() {
               Everything You Need, at a Price We're Keeping a Mystery
             </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Your Health Club membership comes with everything. A coach, a plan, a community, and simple tools to track your progress.
+              Your Health Site membership comes with everything. A coach, a plan, a community, and simple tools to track your progress.
             </p>
           </div>
           
@@ -786,7 +786,7 @@ function App() {
                     <span className="font-black">{theme.name.toUpperCase()} FLASH ENROLLMENT</span>
                     <Sparkles className="h-5 w-5 ml-2" />
                   </div>
-                  <h4 className="text-2xl font-bold mb-2">Health Club Membership at a Mystery Price!</h4>
+                  <h4 className="text-2xl font-bold mb-2">Health Site Membership at a Mystery Price!</h4>
                   <p className="text-yellow-100 font-bold">Spots are limited  - Offer ends in {formatTime(timeLeft)}</p>
                 </div>
                 
@@ -828,7 +828,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
-              Why People Love the Health Club
+              Why People Love the Health Site
             </h3>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               It's not a complicated program. It's simple: a coach, a plan, and people who care. That's why it works.
@@ -868,7 +868,7 @@ function App() {
               </div>
               <h4 className="text-xl font-semibold mb-4 group-hover:text-green-400 transition-colors">Track It on Your Phone</h4>
               <p className="text-gray-300 group-hover:text-white transition-colors">
-                The Health Club app logs your workouts, streaks and weight, shows you how to do every move, and can share your progress with your coach.
+                The Health Site app logs your workouts, streaks and weight, shows you how to do every move, and can share your progress with your coach.
               </p>
               <a href="/app/" className="inline-block mt-4 text-green-400 font-semibold hover:text-green-300">
                 📱 Open the app
@@ -943,10 +943,10 @@ function App() {
               <span className="font-black text-xl">{theme.urgencyText} {formatTime(timeLeft)}</span>
             </div>
             <h3 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
-              Your Health Club Membership Is Ready
+              Your Health Site Membership Is Ready
             </h3>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-              As an Internet Health Site member, you can join the Health Club for a mystery price  - one that's revealed the moment you unlock it.
+              As an Internet Health Site member, you can join the Health Site for a mystery price  - one that's revealed the moment you unlock it.
               A coach, a plan, and a community  - all waiting for you. Don't put it off.
             </p>
           </div>
@@ -954,7 +954,7 @@ function App() {
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 max-w-2xl mx-auto">
             <div className="text-center mb-6">
               <div className="text-3xl font-bold mb-2">Ready to Feel Good Again?</div>
-              <div className="text-sm opacity-80">Join the Health Club  - Mystery Price Inside</div>
+              <div className="text-sm opacity-80">Join the Health Site  - Mystery Price Inside</div>
             </div>
             <div className="flex items-center justify-center mb-4">
               <div className="flex -space-x-2">
@@ -993,7 +993,7 @@ function App() {
             
             <div className="mt-6 p-4 bg-black/20 rounded-lg">
               <p className="text-sm opacity-80 mb-2">
-                ⚠️ <strong>Limited Enrollment:</strong> We can only accept a limited number of new Health Club members this month to maintain our high-quality remote coaching standards.
+                ⚠️ <strong>Limited Enrollment:</strong> We can only accept a limited number of new Health Site members this month to maintain our high-quality remote coaching standards.
               </p>
             </div>
           </div>
@@ -1011,7 +1011,7 @@ function App() {
               </div>
             </div>
             <p className="text-gray-400 mb-2 font-semibold">
-              The Internet Health Site® - Internet Health Club
+              The Internet Health Site®
             </p>
             <p className="text-gray-500 mb-4 text-sm">
               Step-by-step remote guidance into the path of designing your figure. Now at a mystery price.
@@ -1024,14 +1024,14 @@ function App() {
                 className="inline-flex items-center text-gray-300 hover:text-white font-semibold text-sm px-5 py-2.5 rounded-full border-2 border-gray-700 hover:border-gray-500 hover:bg-gray-800 transition-all duration-300"
               >
                 <LogIn className="h-4 w-4 mr-2" />
-                Already a member? Log in to the Health Club
+                Already a member? Log in to the Health Site
               </a>
               <a
                 href="/app/"
                 className="inline-flex items-center mt-3 sm:mt-0 sm:ml-3 text-white font-semibold text-sm px-5 py-2.5 rounded-full bg-[#16123A] hover:bg-[#2A2050] border-2 border-[#3B2A6B] transition-all duration-300"
               >
                 <Smartphone className="h-4 w-4 mr-2" />
-                Track your workouts in the Health Club app
+                Track your workouts in the Health Site app
               </a>
             </div>
             <div className="flex items-center justify-center space-x-4 mb-4 text-sm text-gray-500">
@@ -1095,7 +1095,7 @@ function App() {
               <div className="mt-4 text-center bg-green-50 p-3 rounded-lg border border-green-200">
                 <p className="text-xs text-gray-700 font-medium flex items-center justify-center">
                   <Shield className="h-4 w-4 text-green-600 mr-2" />
-                  Your information is secure and will only be used to personalize your Health Club experience
+                  Your information is secure and will only be used to personalize your Health Site experience
                 </p>
               </div>
             </div>

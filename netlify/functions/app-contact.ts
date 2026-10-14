@@ -27,7 +27,7 @@ export const handler: Handler = async (event) => {
     ghlId = await upsertContact({ email, firstName, phone });
   } catch (e) {
     console.error(e);
-    return json(502, { error: "We couldn't reach the club right now. Please try again in a moment." });
+    return json(502, { error: "We couldn't reach the Health Site right now. Please try again in a moment." });
   }
 
   const first = !current.contact;
@@ -39,7 +39,7 @@ export const handler: Handler = async (event) => {
     try {
       await recordMilestones(ghlId, [{
         tag: 'ihc app: joined',
-        note: `Joined the Health Club app (device IP ${current.device?.ip || clientIp(event) || 'unknown'}). ${done} workout${done === 1 ? '' : 's'} logged so far.`,
+        note: `Joined the Health Site app (device IP ${current.device?.ip || clientIp(event) || 'unknown'}). ${done} workout${done === 1 ? '' : 's'} logged so far.`,
       }]);
     } catch (e) { console.error(e); }
   }

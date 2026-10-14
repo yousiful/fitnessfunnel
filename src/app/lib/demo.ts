@@ -1,7 +1,7 @@
 import { addDays, dayKey, type Member } from './model';
 import { WORKOUTS } from './workouts';
 
-// Preview mode (/app/?demo): a sample member so the club can show the app without signing in.
+// Preview mode (/app/?demo): a sample member so the Health Site can show the app without signing in.
 // Synthetic data, kept in memory only; nothing is sent to the server or the CRM.
 export const isDemo = () => {
   try { return new URLSearchParams(window.location.search).has('demo'); } catch { return false; }

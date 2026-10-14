@@ -1,6 +1,6 @@
 import type { Goal, Level } from './model';
 
-// No-equipment home workouts for the club's four goals. Every move carries a low-impact version
+// No-equipment home workouts for the Health Site's four goals. Every move carries a low-impact version
 // (shown automatically for beginners and the Heal & Recover goal, and on request for everyone).
 
 /** demo: key into DEMOS (lib/moves.ts); the low-impact version uses `${id}_low` when one exists. */

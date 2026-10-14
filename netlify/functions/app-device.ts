@@ -3,7 +3,7 @@ import { clientIp, hashKey, json, parseBody, signSession, store } from '../lib/a
 import { emptyMember } from '../../src/app/lib/model';
 
 // POST { deviceId } -> { token }. No sign-in: each phone/browser gets its own member record,
-// keyed by a random id the app keeps in local storage. The IP is recorded with it for the club's records.
+// keyed by a random id the app keeps in local storage. The IP is recorded with it for the Health Site's records.
 export const handler: Handler = async (event) => {
   if (event.httpMethod !== 'POST') return json(405, { error: 'Method not allowed' });
   const deviceId = String(parseBody<{ deviceId?: string }>(event)?.deviceId || '');
