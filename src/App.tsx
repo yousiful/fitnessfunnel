@@ -418,7 +418,7 @@ function App() {
               See What the Health Site Is All About
             </h3>
             <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto">
-              Watch how real members are changing their lives from home
+              Real people giving you personalized, step-by-step guidance, wherever you are
             </p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-200">
@@ -426,10 +426,10 @@ function App() {
               controls
               playsInline
               preload="metadata"
-              poster="/community-group.webp"
+              poster="/ihs-intro-poster.webp"
               className="w-full aspect-video bg-black"
             >
-              <source src="/health-video.mp4" type="video/mp4" />
+              <source src="/ihs-intro.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -440,6 +440,33 @@ function App() {
             >
               {theme.ctaPrimary}
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Small Steps: the owner's own photos and short video */}
+      <section className="py-12 sm:py-20 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+              It Starts With One Small Step
+            </h3>
+            <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto">
+              A walk with your dog. Lacing up your shoes. We listen, support you and cheer you on from there.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 items-start">
+            <img src="/ihs-walk.webp" alt="Woman walking her dog on a sunny trail" className="w-full h-auto rounded-2xl shadow-xl" loading="lazy" />
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              poster="/ihs-encourage-poster.webp"
+              className="w-full rounded-2xl shadow-xl bg-black aspect-[4/7] object-cover"
+            >
+              <source src="/ihs-encourage.mp4" type="video/mp4" />
+            </video>
+            <img src="/ihs-today.webp" alt="Man lacing his walking shoes with his cat beside him" className="w-full h-auto rounded-2xl shadow-xl" loading="lazy" />
           </div>
         </div>
       </section>
