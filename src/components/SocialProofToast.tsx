@@ -18,10 +18,10 @@ const CITIES = [
 ];
 
 const ACTIONS = [
-  { text: 'just joined the Health Site', emoji: '🎉' },
+  { text: 'just became friends with The Internet Health Site', emoji: '🎉' },
   { text: 'started their figure design plan', emoji: '💪' },
   { text: 'signed up for remote coaching', emoji: '🏋️' },
-  { text: 'joined the community', emoji: '🤝' },
+  { text: 'got a little help along the way', emoji: '🤝' },
   { text: 'started their weight loss journey', emoji: '🔥' },
   { text: 'got matched with a coach', emoji: '⭐' },
   { text: 'completed their first workout', emoji: '✅' },

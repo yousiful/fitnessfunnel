@@ -973,7 +973,7 @@ function App() {
               Your Health Site Membership Is Ready
             </h3>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-              As an Internet Health Site member, you can join the Health Site for a mystery price  - one that's revealed the moment you unlock it.
+              Become friends with The Internet Health Site. A little help along the way. Your price is a mystery, revealed the moment you unlock it.
               A coach, a plan, and a community  - all waiting for you. Don't put it off.
             </p>
           </div>
@@ -981,7 +981,7 @@ function App() {
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 max-w-2xl mx-auto">
             <div className="text-center mb-6">
               <div className="text-3xl font-bold mb-2">Ready to Feel Good Again?</div>
-              <div className="text-sm opacity-80">Join the Health Site  - Mystery Price Inside</div>
+              <div className="text-sm opacity-80">Become friends with The Internet Health Site. A little help along the way</div>
             </div>
             <div className="flex items-center justify-center mb-4">
               <div className="flex -space-x-2">

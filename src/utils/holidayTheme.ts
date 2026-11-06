@@ -1,3 +1,6 @@
+// Client phrase (Sandi 11/6): use this anywhere we would say "join" or "visit"
+export const FRIENDS_CTA = "Become friends with The Internet Health Site. A little help along the way";
+
 export interface HolidayTheme {
   name: string;
   emoji: string;
@@ -69,7 +72,7 @@ export function getHolidayTheme(): HolidayTheme {
       heroHeadline: "Make This the Year You Finally Transform Your Body",
       heroSubline: "New Year, New You — Limited Launch Pricing!",
       ctaPrimary: "🎆 Start My New Year Transformation",
-      ctaSecondary: "🔥 New Year, New Body — JOIN NOW",
+      ctaSecondary: FRIENDS_CTA,
       surveyHeading: "Your New Year Transformation Starts Here!",
       footerBadge: "HAPPY NEW YEAR",
     };
@@ -93,7 +96,7 @@ export function getHolidayTheme(): HolidayTheme {
       heroHeadline: "Fall in Love with Your Body Again This Valentine's Season",
       heroSubline: "The Ultimate Act of Self-Love — Your Health Transformation!",
       ctaPrimary: "💕 Start My Self-Love Journey",
-      ctaSecondary: "❤️ Love Your Body — JOIN NOW",
+      ctaSecondary: FRIENDS_CTA,
       surveyHeading: "Your Self-Love Journey Starts Here!",
       footerBadge: "HAPPY VALENTINE'S",
     };
@@ -120,7 +123,7 @@ export function getHolidayTheme(): HolidayTheme {
         heroHeadline: "Spring Into a Brand New You This Easter",
         heroSubline: "Renew Your Body, Renew Your Spirit!",
         ctaPrimary: "🐣 Start My Easter Renewal",
-        ctaSecondary: "🌸 Spring Into Health — JOIN NOW",
+        ctaSecondary: FRIENDS_CTA,
         surveyHeading: "Your Easter Renewal Starts Here!",
         footerBadge: "HAPPY EASTER",
       };
@@ -142,7 +145,7 @@ export function getHolidayTheme(): HolidayTheme {
       heroHeadline: "Spring Into the Best Shape of Your Life",
       heroSubline: "New Season, New Body — Limited Spring Pricing!",
       ctaPrimary: "🌷 Start My Spring Transformation",
-      ctaSecondary: "🌿 Spring Forward — JOIN NOW",
+      ctaSecondary: FRIENDS_CTA,
       surveyHeading: "Your Spring Transformation Starts Here!",
       footerBadge: "SPRING REFRESH",
     };
@@ -166,7 +169,7 @@ export function getHolidayTheme(): HolidayTheme {
       heroHeadline: "Get Your Summer Body Before Beach Season Hits",
       heroSubline: "The Clock Is Ticking — Summer Waits for Nobody!",
       ctaPrimary: "☀️ Start My Summer Body Plan",
-      ctaSecondary: "🏖️ Beach Ready — JOIN NOW",
+      ctaSecondary: FRIENDS_CTA,
       surveyHeading: "Your Summer Body Starts Here!",
       footerBadge: "SUMMER READY",
     };
@@ -190,7 +193,7 @@ export function getHolidayTheme(): HolidayTheme {
       heroHeadline: "Declare Independence from the Body You Don't Want",
       heroSubline: "This July 4th — Celebrate Your Freedom to Transform!",
       ctaPrimary: "🇺🇸 Declare My Body Freedom",
-      ctaSecondary: "🎆 Freedom Sale — JOIN NOW",
+      ctaSecondary: FRIENDS_CTA,
       surveyHeading: "Your Freedom Journey Starts Here!",
       footerBadge: "HAPPY 4TH",
     };
@@ -214,7 +217,7 @@ export function getHolidayTheme(): HolidayTheme {
       heroHeadline: "Summer Isn't Over — There's Still Time to Transform",
       heroSubline: "Get Back to Basics and Build the Body You Deserve!",
       ctaPrimary: "💪 Start My Body Reset",
-      ctaSecondary: "🔥 Back to Basics — JOIN NOW",
+      ctaSecondary: FRIENDS_CTA,
       surveyHeading: "Your Body Reset Starts Here!",
       footerBadge: "GET STRONG",
     };
@@ -240,7 +243,7 @@ export function getHolidayTheme(): HolidayTheme {
         heroHeadline: "Don't Be Scared of Change — Transform Your Body Now",
         heroSubline: "The Only Thing Scary Is Not Starting!",
         ctaPrimary: "🎃 Scare Away My Excuses",
-        ctaSecondary: "👻 Halloween Deal — JOIN NOW",
+        ctaSecondary: FRIENDS_CTA,
         surveyHeading: "Your Scary-Good Transformation Starts Here!",
         footerBadge: "HAPPY HALLOWEEN",
       };
@@ -262,7 +265,7 @@ export function getHolidayTheme(): HolidayTheme {
       heroHeadline: "Don't Fall Behind — Get Ahead of Your Fitness Goals",
       heroSubline: "This Autumn, Build the Foundation for Your Best Year!",
       ctaPrimary: "🍂 Start My Fall Transformation",
-      ctaSecondary: "🍁 Fall Into Fitness — JOIN NOW",
+      ctaSecondary: FRIENDS_CTA,
       surveyHeading: "Your Fall Transformation Starts Here!",
       footerBadge: "FALL REFRESH",
     };
@@ -286,7 +289,7 @@ export function getHolidayTheme(): HolidayTheme {
       heroHeadline: "This Thanksgiving, Be Grateful for the Body You're Building",
       heroSubline: "Give Thanks by Giving Yourself the Gift of Health!",
       ctaPrimary: "🦃 Start My Grateful Transformation",
-      ctaSecondary: "🙏 Thankful Deal — JOIN NOW",
+      ctaSecondary: FRIENDS_CTA,
       surveyHeading: "Your Grateful Transformation Starts Here!",
       footerBadge: "HAPPY THANKSGIVING",
     };
@@ -310,7 +313,7 @@ export function getHolidayTheme(): HolidayTheme {
       heroHeadline: "Give Yourself the Gift of Health This Holiday Season",
       heroSubline: "Limited Holiday Special — Transform Before the New Year!",
       ctaPrimary: "🎁 Unwrap My Transformation",
-      ctaSecondary: "🎄 Holiday Special — JOIN NOW",
+      ctaSecondary: FRIENDS_CTA,
       surveyHeading: "Your Holiday Gift Awaits!",
       footerBadge: "HAPPY HOLIDAYS",
     };
@@ -333,7 +336,7 @@ export function getHolidayTheme(): HolidayTheme {
     heroHeadline: "Transform Your Body — Your Journey Starts Today",
     heroSubline: "Limited Time Offer — Don't Miss Out!",
     ctaPrimary: "⚡ Start My Transformation Now",
-    ctaSecondary: "🔥 Limited Time — JOIN NOW",
+    ctaSecondary: FRIENDS_CTA,
     surveyHeading: "Your Transformation Starts Here!",
     footerBadge: "LIMITED TIME",
   };
