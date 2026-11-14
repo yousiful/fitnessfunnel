@@ -10,7 +10,7 @@ export function ContactSheet({ initialName, onClose, onSaved }: {
   const [info, setInfo] = useState<ContactInfo>({ firstName: initialName, email: '', phone: '' });
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLFormElement>(null);
   const set = (k: keyof ContactInfo) => (e: React.ChangeEvent<HTMLInputElement>) => setInfo((i) => ({ ...i, [k]: e.target.value }));
 
   useEffect(() => {

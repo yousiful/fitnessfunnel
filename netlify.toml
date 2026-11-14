@@ -6,6 +6,80 @@
 [functions]
   node_bundler = "esbuild"
 
+
+# One canonical domain: internethealthsite.com. Every other host 301s to the same path there.
+[[redirects]]
+  from = "https://www.internethealthsite.com/*"
+  to = "https://internethealthsite.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.internethealthsite.com/*"
+  to = "https://internethealthsite.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://theinternethealthsite.com/*"
+  to = "https://internethealthsite.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://theinternethealthsite.com/*"
+  to = "https://internethealthsite.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.theinternethealthsite.com/*"
+  to = "https://internethealthsite.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.theinternethealthsite.com/*"
+  to = "https://internethealthsite.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://theinternethealthclub.com/*"
+  to = "https://internethealthsite.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://theinternethealthclub.com/*"
+  to = "https://internethealthsite.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.theinternethealthclub.com/*"
+  to = "https://internethealthsite.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.theinternethealthclub.com/*"
+  to = "https://internethealthsite.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://dancing-fox-98c30c.netlify.app/*"
+  to = "https://internethealthsite.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://dancing-fox-98c30c.netlify.app/*"
+  to = "https://internethealthsite.com/:splat"
+  status = 301
+  force = true
+
 # Member app: client-side screens all load the app shell.
 [[redirects]]
   from = "/app/*"

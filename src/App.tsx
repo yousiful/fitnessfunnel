@@ -45,6 +45,11 @@ function App() {
   const theme = getHolidayTheme();
   const MEMBERS_LOGIN_URL = 'https://5ijobzm3ovbhqenhpjix.app.clientclub.net/';
 
+  // Academy articles link to /?start=1 so readers land straight in the sign-up survey
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get('start') === '1') setShowSurvey(true);
+  }, []);
+
   useEffect(() => {
     // Meta pixel: someone opened the enrollment survey (the step before checkout)
     const w = window as unknown as { fbq?: (...args: unknown[]) => void };
@@ -174,11 +179,17 @@ function App() {
           <div className="flex justify-between items-center py-3 sm:py-4">
             <div className="flex items-center min-w-0">
               <AnimatedHeartLogo size="md" showText={true} />
-              <div className={`ml-3 bg-gradient-to-r ${theme.gradient} text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse hidden sm:block`}>
+              <div className={`ml-3 bg-gradient-to-r ${theme.gradient} text-white text-xs font-bold px-3 py-1 rounded-full hidden sm:block`}>
                 {theme.headerBadge}
               </div>
             </div>
             <div className="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
+              <a
+                href="/academy/"
+                className="hidden lg:flex items-center text-gray-800 hover:text-gray-900 font-bold text-sm px-2 py-2.5 underline-offset-4 hover:underline whitespace-nowrap"
+              >
+                Free Academy
+              </a>
               <a
                 href="/app/"
                 aria-label="Open the Health Site app to track workouts and progress"
@@ -224,7 +235,7 @@ function App() {
       <section className={`pt-36 sm:pt-20 pb-16 bg-gradient-to-br ${theme.bgLight} relative overflow-hidden`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           {/* Urgency Banner */}
-          <div className={`bg-gradient-to-r ${theme.gradient} text-white text-center py-5 rounded-xl mb-8 animate-pulse relative overflow-hidden shadow-2xl border-4 border-yellow-400`}>
+          <div className={`bg-gradient-to-r ${theme.gradient} text-white text-center py-5 rounded-xl mb-8 relative overflow-hidden shadow-2xl border-4 border-yellow-400`}>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer" />
             <div className="flex items-center justify-center space-x-2 sm:space-x-3 relative z-10 flex-wrap">
               <span className="text-lg sm:text-xl">{theme.emoji}</span>
@@ -263,11 +274,11 @@ function App() {
               <Sparkles className="h-5 w-5 ml-2 text-yellow-500" />
             </div>
 
-            <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
               {theme.heroHeadline}
               <span className={`block ${theme.accentColor} mt-2`}>Your Transformation Starts TODAY</span>
               <span className={`block ${theme.accentColor} mt-2 text-3xl md:text-4xl`}>{theme.heroSubline}</span>
-            </h2>
+            </h1>
             
             <p className="text-xl md:text-2xl text-gray-700 mb-4 max-w-4xl mx-auto font-medium">
               If you're part of <span className={`${theme.accentColor} font-bold`}>The Internet Health Site</span>, great news  -
@@ -1032,15 +1043,15 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex items-center justify-center mb-4">
-              <AnimatedHeartLogo size="md" showText={true} />
-              <div className={`ml-4 bg-gradient-to-r ${theme.gradient} text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse`}>
+              <AnimatedHeartLogo size="md" showText={true} tone="dark" />
+              <div className={`ml-4 bg-gradient-to-r ${theme.gradient} text-white text-xs font-bold px-3 py-1 rounded-full`}>
                 {theme.footerBadge}
               </div>
             </div>
             <p className="text-gray-400 mb-2 font-semibold">
               The Internet Health Site®
             </p>
-            <p className="text-gray-500 mb-4 text-sm">
+            <p className="text-gray-400 mb-4 text-sm">
               Step-by-step remote guidance into the path of designing your figure. Now at a mystery price.
             </p>
             <div className="mb-6">
@@ -1055,13 +1066,24 @@ function App() {
               </a>
               <a
                 href="/app/"
-                className="inline-flex items-center mt-3 sm:mt-0 sm:ml-3 text-white font-semibold text-sm px-5 py-2.5 rounded-full bg-[#16123A] hover:bg-[#2A2050] border-2 border-[#3B2A6B] transition-all duration-300"
+                className="inline-flex items-center mt-3 sm:mt-0 sm:ml-3 text-gray-900 font-semibold text-sm px-5 py-2.5 rounded-full bg-white hover:bg-gray-100 border-2 border-white transition-all duration-300"
               >
                 <Smartphone className="h-4 w-4 mr-2" />
                 Track your workouts in the Health Site app
               </a>
             </div>
-            <div className="flex items-center justify-center space-x-4 mb-4 text-sm text-gray-500">
+            <nav aria-label="Health Site Academy" className="mb-6 text-sm">
+              <a href="/academy/" className="font-semibold text-white underline underline-offset-4 hover:text-gray-200">Free Health Site Academy</a>
+              <span className="block mt-2 text-gray-300">
+                <a href="/academy/beginner-workouts/" className="hover:text-white">Beginner workouts</a>{' · '}
+                <a href="/academy/home-workouts/" className="hover:text-white">Home workouts</a>{' · '}
+                <a href="/academy/low-impact/" className="hover:text-white">Low impact</a>{' · '}
+                <a href="/academy/weight-loss/" className="hover:text-white">Weight loss</a>{' · '}
+                <a href="/academy/nutrition/" className="hover:text-white">Nutrition</a>{' · '}
+                <a href="/academy/over-40/" className="hover:text-white">Over 40, 50, 60</a>
+              </span>
+            </nav>
+            <div className="flex items-center justify-center space-x-4 mb-4 text-sm text-gray-400">
               <span>🔒 Secure & Private</span>
               <span>•</span>
               <span>💳 Safe Payments</span>
@@ -1069,7 +1091,7 @@ function App() {
               <span>{theme.emoji} {theme.headerBadge} Active</span>
             </div>
             <img src="/brand/emblem.png" alt="The Internet Health Site emblem" width={64} height={64} className="w-16 h-16 mx-auto mb-3 opacity-90" loading="lazy" />
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-400">
               © {new Date().getFullYear()} The Internet Health Site. All rights reserved.
             </p>
           </div>
@@ -1080,7 +1102,7 @@ function App() {
       {showSurvey && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-fadeIn">
           <div className="bg-white rounded-2xl max-w-md w-full max-h-[90vh] shadow-2xl transform animate-slideUp relative flex flex-col mx-2 sm:mx-0">
-            <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 bg-yellow-400 text-gray-900 font-black text-[10px] sm:text-xs px-3 sm:px-4 py-1.5 sm:py-2 rounded-full transform rotate-12 shadow-2xl border-4 border-white z-30 animate-pulse">
+            <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 bg-yellow-400 text-gray-900 font-black text-[10px] sm:text-xs px-3 sm:px-4 py-1.5 sm:py-2 rounded-full transform rotate-12 shadow-2xl border-4 border-white z-30">
               {theme.headerBadge}
             </div>
 

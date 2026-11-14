@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Light design only, so phone dark modes do not recolor buttons into their sections */
+:root {
+  color-scheme: only light;
+}
+
 /* Custom animations for the heart logo */
 @keyframes heartbeat {
   0% { transform: scale(1); }

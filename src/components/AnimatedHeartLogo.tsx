@@ -4,12 +4,15 @@ interface AnimatedHeartLogoProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
   showText?: boolean;
   className?: string;
+  /** 'dark' = the logo sits on a dark background (footer), so the name renders light */
+  tone?: 'light' | 'dark';
 }
 
 const AnimatedHeartLogo: React.FC<AnimatedHeartLogoProps> = ({ 
   size = 'md', 
   showText = true, 
-  className = '' 
+  className = '',
+  tone = 'light'
 }) => {
   const sizeClasses = {
     sm: 'w-8 h-8',
@@ -67,9 +70,9 @@ const AnimatedHeartLogo: React.FC<AnimatedHeartLogoProps> = ({
       {/* Brand Text */}
       {showText && (
         <div className="ml-2 sm:ml-3">
-          <h1 className={`${textSizes[size]} font-bold text-gray-900 leading-tight`}>
+          <span className={`block ${textSizes[size]} font-bold leading-tight ${tone === 'dark' ? 'text-white' : 'text-gray-900'}`}>
             The Internet Health Site
-          </h1>
+          </span>
         </div>
       )}
     </div>
