@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "beginner-workouts",
+    "name": "Beginner workouts",
+    "short": "Your first weeks, made simple",
+    "intro": "Never worked out, or starting over after a long break? These guides show you exactly what to do on day one, how much is enough, and how to build from there without getting hurt or burned out.",
+    "color": "#B45309"
+  },
+  {
+    "slug": "home-workouts",
+    "name": "Home workouts",
+    "short": "No gym, no problem",
+    "intro": "Short routines you can do in the living room with your body weight, a wall, or a chair. Most take 10 to 20 minutes and need zero equipment.",
+    "color": "#0F766E"
+  },
+  {
+    "slug": "low-impact",
+    "name": "Low impact and joint friendly",
+    "short": "Easy on knees, hips and back",
+    "intro": "Moves that get your heart rate up and build strength without jumping or pounding. Good for sore knees, extra weight, or anyone who wants to move without the aches.",
+    "color": "#1D4ED8"
+  },
+  {
+    "slug": "weight-loss",
+    "name": "Weight loss",
+    "short": "What actually works",
+    "intro": "Plain answers on losing weight in a way you can keep up: walking plans, realistic expectations, and the habits that matter more than any single workout.",
+    "color": "#BE123C"
+  },
+  {
+    "slug": "nutrition",
+    "name": "Nutrition basics",
+    "short": "Food without the confusion",
+    "intro": "How much protein you need, how to plan simple meals for the week, and how to eat well without strict diets or counting every bite.",
+    "color": "#15803D"
+  },
+  {
+    "slug": "over-40",
+    "name": "Over 40, 50 and 60",
+    "short": "Strong at every age",
+    "intro": "Strength, balance and energy for the second half of life. Safe, steady routines for people in their 40s, 50s, 60s and beyond, including seated options.",
+    "color": "#7E22CE"
+  },
+  {
+    "slug": "motivation-habits",
+    "name": "Motivation and habits",
+    "short": "Keep showing up",
+    "intro": "How to stick with it when life gets busy: small habits, realistic schedules for parents and workers, and what to do on the days you do not feel like it.",
+    "color": "#C2410C"
+  },
+  {
+    "slug": "recovery-sleep",
+    "name": "Recovery and sleep",
+    "short": "Rest is part of the plan",
+    "intro": "Sleep, rest days and recovery are where your body actually gets stronger. Learn how much you need and how to get more of it.",
+    "color": "#334155"
+  }
+]
